@@ -4,6 +4,10 @@ import { useState } from "react";
 import "./App.css";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
+import {
+  BorderColorOutlinedIcon,
+  FilterListOutlinedIcon,
+} from "@mui/icons-material";
 
 function App() {
   return (
@@ -13,8 +17,8 @@ function App() {
         display: "flex",
       }}
     >
-      <Box sx={{ p: 2, m: 0, border: "1px dashed grey" }}>
-        This Box renders as an HTML section element.
+      <Box sx={{ p: 2, m: 0, border: "1px dashed grey", flexGrow: 0.3 }}>
+        <h3>Chats</h3>
       </Box>
       <Box sx={{ p: 2, border: "1px dashed grey", flexGrow: 1 }}>
         This Box renders as an HTML section element.
