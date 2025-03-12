@@ -23,6 +23,7 @@ import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import Tooltip from "@mui/material/Tooltip";
 
 const drawerWidth = 240;
 
@@ -121,20 +122,22 @@ export default function MiniDrawer() {
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={[
-              {
-                marginRight: 5,
-              },
-              open && { display: "none" },
-            ]}
-          >
-            <MenuIcon />
-          </IconButton>
+          <Tooltip title="Open Navigation">
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={[
+                {
+                  marginRight: 5,
+                },
+                open && { display: "none" },
+              ]}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Tooltip>
           <Typography variant="h6" noWrap component="div">
             WhatsApp Clone
           </Typography>
@@ -142,80 +145,84 @@ export default function MiniDrawer() {
       </AppBar>
       <Drawer sx={{ display: "flex" }} variant="permanent" open={open}>
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "rtl" ? (
-              <ChevronRightIcon />
-            ) : (
-              <ChevronLeftIcon />
-            )}
-          </IconButton>
+          <Tooltip title="Close Navigation">
+            <IconButton onClick={handleDrawerClose}>
+              {theme.direction === "rtl" ? (
+                <ChevronRightIcon />
+              ) : (
+                <ChevronLeftIcon />
+              )}
+            </IconButton>
+          </Tooltip>
         </DrawerHeader>
         <Divider />
         <List>
           {["Chats", "Calls", "Status"].map((text, index) => (
-            <ListItem
-              key={text}
-              disablePadding
-              sx={{ display: "block" }}
-              onClick={handleDrawerClose}
-            >
-              <ListItemButton
-                sx={[
-                  {
-                    minHeight: 48,
-                    px: 2.5,
-                  },
-                  open
-                    ? {
-                        justifyContent: "initial",
-                      }
-                    : {
-                        justifyContent: "center",
-                      },
-                ]}
+            <Tooltip title={text} placement="top">
+              <ListItem
+                key={text}
+                disablePadding
+                sx={{ display: "block" }}
+                onClick={handleDrawerClose}
               >
-                <ListItemIcon
+                <ListItemButton
                   sx={[
                     {
-                      minWidth: 0,
-                      justifyContent: "center",
+                      minHeight: 48,
+                      px: 2.5,
                     },
                     open
                       ? {
-                          mr: 3,
+                          justifyContent: "initial",
                         }
                       : {
-                          mr: "auto",
+                          justifyContent: "center",
                         },
                   ]}
                 >
-                  {(() => {
-                    switch (text) {
-                      case "Chats":
-                        return <ChatOutlinedIcon />;
-                      case "Calls":
-                        return <CallOutlinedIcon />;
-                      case "Status":
-                        return <AutoModeOutlinedIcon />;
-                      default:
-                        return null;
-                    }
-                  })()}
-                </ListItemIcon>
-                <ListItemText
-                  primary={text}
-                  sx={[
-                    open
-                      ? {
-                          opacity: 1,
-                        }
-                      : {
-                          opacity: 0,
-                        },
-                  ]}
-                />
-              </ListItemButton>
-            </ListItem>
+                  <ListItemIcon
+                    sx={[
+                      {
+                        minWidth: 0,
+                        justifyContent: "center",
+                      },
+                      open
+                        ? {
+                            mr: 3,
+                          }
+                        : {
+                            mr: "auto",
+                          },
+                    ]}
+                  >
+                    {(() => {
+                      switch (text) {
+                        case "Chats":
+                          return <ChatOutlinedIcon />;
+                        case "Calls":
+                          return <CallOutlinedIcon />;
+                        case "Status":
+                          return <AutoModeOutlinedIcon />;
+                        default:
+                          return null;
+                      }
+                    })()}
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={text}
+                    sx={[
+                      open
+                        ? {
+                            opacity: 1,
+                          }
+                        : {
+                            opacity: 0,
+                          },
+                    ]}
+                  />
+                </ListItemButton>
+              </ListItem>
+            </Tooltip>
           ))}
         </List>
         <Divider />
@@ -229,7 +236,7 @@ export default function MiniDrawer() {
         >
           {["Starred messages", "Archived chats", "Settings", "Profile"].map(
             (text, index) => (
-              <>
+              <Tooltip title={text} placement="top">
                 {text == "Settings" && <Divider />}
                 <ListItem
                   key={text}
@@ -296,7 +303,7 @@ export default function MiniDrawer() {
                     />
                   </ListItemButton>
                 </ListItem>
-              </>
+              </Tooltip>
             )
           )}
         </List>
