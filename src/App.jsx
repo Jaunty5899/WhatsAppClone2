@@ -3,6 +3,7 @@ import { useState } from "react";
 // import viteLogo from "/vite.svg";
 import "./App.css";
 import MiniDrawer from "./MiniDrawer";
+import UserSlip from "./UserSlip";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import ButtonGroup from "@mui/material/ButtonGroup";
@@ -83,10 +84,11 @@ function App() {
           }}
           variant="standard"
         />
+        <Box sx={{ paddingTop: 3 }}>
+          <UserSlip />
+        </Box>
       </Box>
-      <Box sx={{ p: 2, flexGrow: 1 }}>
-        <span>3rd box</span>
-      </Box>
+      <Box sx={{ p: 2, flexGrow: 1 }}></Box>
     </Box>
   );
 }

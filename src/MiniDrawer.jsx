@@ -23,6 +23,7 @@ import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 
 const drawerWidth = 240;
@@ -286,7 +287,7 @@ export default function MiniDrawer() {
                           case "Settings":
                             return <SettingsOutlinedIcon />;
                           case "Profile":
-                            return <AccountCircleOutlinedIcon />;
+                            return <Avatar sx={{ width: 24, height: 24 }} />;
                           default:
                             return null;
                         }
