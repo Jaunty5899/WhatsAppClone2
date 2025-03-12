@@ -17,11 +17,19 @@ function App() {
       }}
     >
       <MiniDrawer />
-      <Box sx={{ p: 2, m: 0, border: "1px dashed grey", flexGrow: 0.3 }}>
+      <Box
+        sx={{
+          p: 2,
+          m: 0,
+          border: "1px dashed grey",
+          width: "350px",
+          scrollbarWidth: "thin",
+        }}
+      >
         <h3>Chats</h3>
       </Box>
       <Box sx={{ p: 2, border: "1px dashed grey", flexGrow: 1 }}>
-        This Box renders as an HTML section element.
+        <span></span>
       </Box>
     </Box>
   );

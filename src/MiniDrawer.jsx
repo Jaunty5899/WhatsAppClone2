@@ -16,8 +16,13 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
+import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
+import AutoModeOutlinedIcon from "@mui/icons-material/AutoModeOutlined";
+import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
+import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 
 const drawerWidth = 240;
 
@@ -135,7 +140,7 @@ export default function MiniDrawer() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Drawer variant="permanent" open={open}>
+      <Drawer sx={{ display: "flex" }} variant="permanent" open={open}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
@@ -147,8 +152,13 @@ export default function MiniDrawer() {
         </DrawerHeader>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
+          {["Chats", "Calls", "Status"].map((text, index) => (
+            <ListItem
+              key={text}
+              disablePadding
+              sx={{ display: "block" }}
+              onClick={handleDrawerClose}
+            >
               <ListItemButton
                 sx={[
                   {
@@ -179,7 +189,18 @@ export default function MiniDrawer() {
                         },
                   ]}
                 >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  {(() => {
+                    switch (text) {
+                      case "Chats":
+                        return <ChatOutlinedIcon />;
+                      case "Calls":
+                        return <CallOutlinedIcon />;
+                      case "Status":
+                        return <AutoModeOutlinedIcon />;
+                      default:
+                        return null;
+                    }
+                  })()}
                 </ListItemIcon>
                 <ListItemText
                   primary={text}
@@ -198,56 +219,86 @@ export default function MiniDrawer() {
           ))}
         </List>
         <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={[
-                  {
-                    minHeight: 48,
-                    px: 2.5,
-                  },
-                  open
-                    ? {
-                        justifyContent: "initial",
-                      }
-                    : {
-                        justifyContent: "center",
-                      },
-                ]}
-              >
-                <ListItemIcon
-                  sx={[
-                    {
-                      minWidth: 0,
-                      justifyContent: "center",
-                    },
-                    open
-                      ? {
-                          mr: 3,
-                        }
-                      : {
-                          mr: "auto",
-                        },
-                  ]}
+        <List
+          sx={[
+            {
+              position: "absolute",
+              bottom: "0%",
+            },
+          ]}
+        >
+          {["Starred messages", "Archived chats", "Settings", "Profile"].map(
+            (text, index) => (
+              <>
+                {text == "Settings" && <Divider />}
+                <ListItem
+                  key={text}
+                  disablePadding
+                  sx={{ display: "block" }}
+                  onClick={handleDrawerClose}
                 >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText
-                  primary={text}
-                  sx={[
-                    open
-                      ? {
-                          opacity: 1,
-                        }
-                      : {
-                          opacity: 0,
+                  <ListItemButton
+                    sx={[
+                      {
+                        minHeight: 48,
+                        px: 2.5,
+                      },
+                      open
+                        ? {
+                            justifyContent: "initial",
+                          }
+                        : {
+                            justifyContent: "center",
+                          },
+                    ]}
+                  >
+                    <ListItemIcon
+                      sx={[
+                        {
+                          minWidth: 0,
+                          justifyContent: "center",
                         },
-                  ]}
-                />
-              </ListItemButton>
-            </ListItem>
-          ))}
+                        open
+                          ? {
+                              mr: 3,
+                            }
+                          : {
+                              mr: "auto",
+                            },
+                      ]}
+                    >
+                      {(() => {
+                        switch (text) {
+                          case "Starred messages":
+                            return <StarBorderOutlinedIcon />;
+                          case "Archived chats":
+                            return <Inventory2OutlinedIcon />;
+                          case "Settings":
+                            return <SettingsOutlinedIcon />;
+                          case "Profile":
+                            return <AccountCircleOutlinedIcon />;
+                          default:
+                            return null;
+                        }
+                      })()}
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={text}
+                      sx={[
+                        open
+                          ? {
+                              opacity: 1,
+                            }
+                          : {
+                              opacity: 0,
+                            },
+                      ]}
+                    />
+                  </ListItemButton>
+                </ListItem>
+              </>
+            )
+          )}
         </List>
       </Drawer>
     </Box>
