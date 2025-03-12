@@ -4,6 +4,7 @@ import { useState } from "react";
 import "./App.css";
 import MiniDrawer from "./MiniDrawer";
 import UserSlip from "./UserSlip";
+import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import ButtonGroup from "@mui/material/ButtonGroup";
@@ -19,11 +20,10 @@ function App() {
   return (
     <Box
       sx={{
-        border: "1px solid grey",
         display: "flex",
         position: "relative",
         top: "62px",
-        height: "91.7vh",
+        height: "91.6vh",
       }}
     >
       <MiniDrawer />
@@ -32,7 +32,6 @@ function App() {
           p: 2,
           m: 0,
           width: "350px",
-          scrollbarWidth: "thin",
           boxShadow:
             "0px 2px 2px 0px rgba(0,0,0,0.14) , 0px 3px 1px -2px rgba(0,0,0,0.12) , 0px 1px 5px 0px rgba(0,0,0,0.2) ",
         }}
@@ -84,7 +83,31 @@ function App() {
           }}
           variant="standard"
         />
-        <Box sx={{ paddingTop: 3 }}>
+
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            overflow: "scroll",
+            scrollbarWidth: "thin",
+            height: "77vh",
+            gap: 3.5,
+            paddingTop: 3,
+            paddingRight: 1,
+          }}
+        >
+          <UserSlip />
+          <UserSlip />
+          <UserSlip />
+          <UserSlip />
+          <UserSlip />
+          <UserSlip />
+          <UserSlip />
+          <UserSlip />
+          <UserSlip />
+          <UserSlip />
+          <UserSlip />
+          <UserSlip />
           <UserSlip />
         </Box>
       </Box>
