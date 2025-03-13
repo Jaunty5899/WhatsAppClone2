@@ -4,7 +4,6 @@ import { useState } from "react";
 import "./App.css";
 import MiniDrawer from "./MiniDrawer";
 import UserSlip from "./UserSlip";
-import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import ButtonGroup from "@mui/material/ButtonGroup";
@@ -17,6 +16,7 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
 function App() {
+  const [inputValue, setInputValue] = useState("");
   return (
     <Box
       sx={{
@@ -67,6 +67,8 @@ function App() {
           sx={{ width: "100%" }}
           id="standard-basic"
           label="Search or start a new chat"
+          value={inputValue}
+          onChange={(event) => setInputValue(event.target.value)}
           slotProps={{
             input: {
               startAdornment: (
@@ -76,38 +78,32 @@ function App() {
               ),
               endAdornment: (
                 <InputAdornment position="end">
-                  <CloseOutlinedIcon fontSize="small" />
+                  <IconButton
+                    onClick={() => setInputValue("")}
+                    edge="end"
+                    style={{ visibility: inputValue ? "visible" : "hidden" }} // Hide button if input is empty
+                  >
+                    <CloseOutlinedIcon fontSize="small" />
+                  </IconButton>
                 </InputAdornment>
               ),
             },
           }}
           variant="standard"
         />
-
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
-            overflow: "scroll",
+            overflowY: "scroll",
             scrollbarWidth: "thin",
-            height: "77vh",
+            height: "86%",
             gap: 3.5,
             paddingTop: 3,
             paddingRight: 1,
+            marginTop: 1,
           }}
         >
-          <UserSlip />
-          <UserSlip />
-          <UserSlip />
-          <UserSlip />
-          <UserSlip />
-          <UserSlip />
-          <UserSlip />
-          <UserSlip />
-          <UserSlip />
-          <UserSlip />
-          <UserSlip />
-          <UserSlip />
           <UserSlip />
         </Box>
       </Box>
@@ -117,3 +113,4 @@ function App() {
 }
 
 export default App;
+// git add . && git commit -m '' && git push origin main
