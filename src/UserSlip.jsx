@@ -2,7 +2,7 @@ import "./UserSlip.css";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 
-export default function UserSlip() {
+export default function UserSlip({ color }) {
   return (
     <Box sx={{ display: "flex", gap: 1.5, alignItems: "center" }}>
       <Avatar sx={{ width: 48, height: 48 }} />
@@ -11,6 +11,7 @@ export default function UserSlip() {
           sx={{
             display: "flex",
             justifyContent: "space-between",
+            color: { color },
           }}
         >
           <span className="userName">User</span>

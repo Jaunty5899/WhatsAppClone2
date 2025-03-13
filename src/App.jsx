@@ -21,8 +21,7 @@ function App() {
     <Box
       sx={{
         display: "flex",
-        position: "relative",
-        top: "62px",
+        marginTop: 7.8,
         height: "91.6vh",
       }}
     >
@@ -32,6 +31,8 @@ function App() {
           p: 2,
           m: 0,
           width: "350px",
+          height: "100%",
+          overflow: "hidden",
           boxShadow:
             "0px 2px 2px 0px rgba(0,0,0,0.14) , 0px 3px 1px -2px rgba(0,0,0,0.12) , 0px 1px 5px 0px rgba(0,0,0,0.2) ",
         }}
@@ -66,7 +67,8 @@ function App() {
         <TextField
           sx={{ width: "100%" }}
           id="standard-basic"
-          label="Search or start a new chat"
+          // label="Search or start a new chat"
+          placeholder="Search or start a new chat"
           value={inputValue}
           onChange={(event) => setInputValue(event.target.value)}
           slotProps={{
@@ -97,14 +99,24 @@ function App() {
             flexDirection: "column",
             overflowY: "scroll",
             scrollbarWidth: "thin",
-            height: "86%",
+            height: "89%",
             gap: 3.5,
             paddingTop: 3,
             paddingRight: 1,
+            paddingBottom: 3,
             marginTop: 1,
           }}
         >
           <UserSlip />
+          <UserSlip />
+          <UserSlip />
+          <UserSlip />
+          <UserSlip />
+          <UserSlip />
+          <UserSlip />
+          <UserSlip />
+          <UserSlip color="violet" />
+          <UserSlip color="Red" />
         </Box>
       </Box>
       <Box sx={{ p: 2, flexGrow: 1 }}></Box>
