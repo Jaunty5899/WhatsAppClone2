@@ -23,9 +23,9 @@ import AutoModeOutlinedIcon from "@mui/icons-material/AutoModeOutlined";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
+import { v4 as uuid } from "uuid";
 
 const drawerWidth = 240;
 
@@ -110,7 +110,6 @@ const Drawer = styled(MuiDrawer, {
 export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
-  const [menuState, setMenuState] = useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -164,9 +163,8 @@ export default function MiniDrawer() {
         <Divider />
         <List>
           {["Chats", "Calls", "Status"].map((text, index) => (
-            <Tooltip title={text} placement="top">
+            <Tooltip key={uuid()} title={text} placement="top">
               <ListItem
-                key={text}
                 disablePadding
                 sx={{ display: "block" }}
                 onClick={handleDrawerClose}
@@ -242,10 +240,9 @@ export default function MiniDrawer() {
         >
           {["Starred messages", "Archived chats", "Settings", "Profile"].map(
             (text, index) => (
-              <Tooltip title={text} placement="top">
+              <Tooltip key={uuid()} title={text} placement="top">
                 {text == "Settings" && <Divider />}
                 <ListItem
-                  key={text}
                   disablePadding
                   sx={{ display: "block" }}
                   onClick={() => {
@@ -289,18 +286,9 @@ export default function MiniDrawer() {
                           case "Archived chats":
                             return <Inventory2OutlinedIcon />;
                           case "Settings":
-                            return (
-                              <SettingsOutlinedIcon
-                                onClick={() => setMenuState(true)}
-                              />
-                            );
+                            return <SettingsOutlinedIcon />;
                           case "Profile":
-                            return (
-                              <Avatar
-                                sx={{ width: 24, height: 24 }}
-                                onClick={() => setMenuState(true)}
-                              />
-                            );
+                            return <Avatar sx={{ width: 24, height: 24 }} />;
                           default:
                             return null;
                         }
