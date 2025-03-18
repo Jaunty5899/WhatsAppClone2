@@ -291,14 +291,14 @@ export default function MiniDrawer() {
                           case "Settings":
                             return (
                               <SettingsOutlinedIcon
-                                onClick={setMenuState(true)}
+                                onClick={() => setMenuState(true)}
                               />
                             );
                           case "Profile":
                             return (
                               <Avatar
                                 sx={{ width: 24, height: 24 }}
-                                onClick={setMenuState(true)}
+                                onClick={() => setMenuState(true)}
                               />
                             );
                           default:
