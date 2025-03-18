@@ -110,6 +110,7 @@ const Drawer = styled(MuiDrawer, {
 export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
+  const [menuState, setMenuState] = useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -246,6 +247,9 @@ export default function MiniDrawer() {
                   disablePadding
                   sx={{ display: "block" }}
                   onClick={() => {
+                    if (text == "Settings") {
+                      setMenuState(true);
+                    }
                     handleDrawerClose();
                   }}
                 >
@@ -313,6 +317,7 @@ export default function MiniDrawer() {
           )}
         </List>
       </Drawer>
+      <BasicMenu />
     </Box>
   );
 }
