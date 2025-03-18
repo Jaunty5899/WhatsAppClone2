@@ -49,8 +49,8 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicMenu() {
-  const [value, setValue] = useState(0);
+export default function BasicMenu({ menuState }) {
+  const [value, setValue] = useState(menuState);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -61,13 +61,15 @@ export default function BasicMenu() {
       sx={{
         bgcolor: "background.paper",
         display: "flex",
-        width: 500,
+        width: 450,
         height: 500,
         position: "absolute",
         bottom: "1%",
         left: ".5%",
         zIndex: 1200,
         borderRadius: 2,
+        clipPath: `circle(${menuState ? 150 : 0}% at 0 100%)`,
+        transition: "clip-path 0.25s ease-in-out",
         boxShadow:
           "0px 2px 5px 0px rgba(0,0,0,0.14) , 0px 1px 10px 0px rgba(0,0,0,0.12) , 0px 2px 4px -1px rgba(0,0,0,0.2) ",
       }}
@@ -84,7 +86,6 @@ export default function BasicMenu() {
           "& .MuiTabs-indicator": {
             left: 5,
             width: "3px",
-            height: 32,
             borderRadius: 2,
             backgroundColor: "#00e676",
           },
@@ -238,7 +239,7 @@ export default function BasicMenu() {
           }}
           label="Profile"
           iconPosition="start"
-          {...a11yProps(8)}
+          {...a11yProps(9)}
         />
       </Tabs>
       <TabPanel value={value} index={0}>

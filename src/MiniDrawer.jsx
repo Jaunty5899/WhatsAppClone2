@@ -247,7 +247,7 @@ export default function MiniDrawer() {
                   disablePadding
                   sx={{ display: "block" }}
                   onClick={() => {
-                    if (text == "Settings") {
+                    if (text == "Settings" || text == "Profile") {
                       setMenuState(true);
                     }
                     handleDrawerClose();
@@ -317,7 +317,7 @@ export default function MiniDrawer() {
           )}
         </List>
       </Drawer>
-      <BasicMenu />
+      <BasicMenu menuState={menuState} />
     </Box>
   );
 }
