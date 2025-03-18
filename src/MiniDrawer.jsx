@@ -1,4 +1,5 @@
-import * as React from "react";
+import { useState } from "react";
+import BasicMenu from "./BasicMenu";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
@@ -108,7 +109,8 @@ const Drawer = styled(MuiDrawer, {
 
 export default function MiniDrawer() {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [menuState, setMenuState] = useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -246,7 +248,9 @@ export default function MiniDrawer() {
                   key={text}
                   disablePadding
                   sx={{ display: "block" }}
-                  onClick={handleDrawerClose}
+                  onClick={() => {
+                    handleDrawerClose();
+                  }}
                 >
                   <ListItemButton
                     sx={[
@@ -285,9 +289,18 @@ export default function MiniDrawer() {
                           case "Archived chats":
                             return <Inventory2OutlinedIcon />;
                           case "Settings":
-                            return <SettingsOutlinedIcon />;
+                            return (
+                              <SettingsOutlinedIcon
+                                onClick={setMenuState(true)}
+                              />
+                            );
                           case "Profile":
-                            return <Avatar sx={{ width: 24, height: 24 }} />;
+                            return (
+                              <Avatar
+                                sx={{ width: 24, height: 24 }}
+                                onClick={setMenuState(true)}
+                              />
+                            );
                           default:
                             return null;
                         }

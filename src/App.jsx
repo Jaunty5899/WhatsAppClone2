@@ -4,6 +4,7 @@ import { useState } from "react";
 import "./App.css";
 import MiniDrawer from "./MiniDrawer";
 import UserSlip from "./UserSlip";
+import BasicMenu from "./BasicMenu";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import ButtonGroup from "@mui/material/ButtonGroup";
