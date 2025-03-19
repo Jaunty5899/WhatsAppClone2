@@ -110,6 +110,7 @@ export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const [menuState, setMenuState] = useState(false);
+  const [selectedItem, setSelectedItem] = useState();
 
   const stateChangeFunction = () => {
     setMenuState(false);
@@ -171,12 +172,25 @@ export default function MiniDrawer() {
         </DrawerHeader>
         <Divider />
         <List>
-          {["Chats", "Calls", "Status"].map((text, index) => (
+          {[
+            "Chats",
+            "Calls",
+            "Status",
+            "Starred messages",
+            "Archived chats",
+            "Settings",
+            "Profile",
+          ].map((text, index) => (
             <Tooltip key={uuid()} title={text} placement="top">
               <ListItem
                 disablePadding
                 sx={{ display: "block" }}
-                onClick={handleDrawerClose}
+                onClick={() => {
+                  if (text == "Settings" || text == "Profile") {
+                    setMenuState({ state: true, item: text });
+                  }
+                  handleDrawerClose();
+                }}
               >
                 <ListItemButton
                   sx={[
@@ -211,11 +225,23 @@ export default function MiniDrawer() {
                     {(() => {
                       switch (text) {
                         case "Chats":
-                          return <ChatOutlinedIcon />;
+                          return (
+                            <ChatOutlinedIcon
+                            // sx={{ color: "var(--accent-color)" }}
+                            />
+                          );
                         case "Calls":
                           return <CallOutlinedIcon />;
                         case "Status":
                           return <AutoModeOutlinedIcon />;
+                        case "Starred messages":
+                          return <StarBorderOutlinedIcon />;
+                        case "Archived chats":
+                          return <Inventory2OutlinedIcon />;
+                        case "Settings":
+                          return <SettingsOutlinedIcon />;
+                        case "Profile":
+                          return <Avatar sx={{ width: 24, height: 24 }} />;
                         default:
                           return null;
                       }
@@ -234,102 +260,17 @@ export default function MiniDrawer() {
                     ]}
                   />
                 </ListItemButton>
+                {(text == "Status" || text == "Archived chats") && <Divider />}
+                {text == "Status" && <Box sx={{ height: 320 }} />}
               </ListItem>
             </Tooltip>
           ))}
-        </List>
-        <Divider />
-        <List
-          sx={[
-            {
-              position: "absolute",
-              bottom: "0%",
-            },
-          ]}
-        >
-          {["Starred messages", "Archived chats", "Settings", "Profile"].map(
-            (text, index) => (
-              <Tooltip key={uuid()} title={text} placement="top">
-                {text == "Settings" && <Divider />}
-                <ListItem
-                  disablePadding
-                  sx={{ display: "block" }}
-                  onClick={() => {
-                    if (text == "Settings" || text == "Profile") {
-                      setMenuState({ state: true, item: text });
-                    }
-                    handleDrawerClose();
-                  }}
-                >
-                  <ListItemButton
-                    sx={[
-                      {
-                        minHeight: 48,
-                        px: 2.5,
-                      },
-                      open
-                        ? {
-                            justifyContent: "initial",
-                          }
-                        : {
-                            justifyContent: "center",
-                          },
-                    ]}
-                  >
-                    <ListItemIcon
-                      sx={[
-                        {
-                          minWidth: 0,
-                          justifyContent: "center",
-                        },
-                        open
-                          ? {
-                              mr: 3,
-                            }
-                          : {
-                              mr: "auto",
-                            },
-                      ]}
-                    >
-                      {(() => {
-                        switch (text) {
-                          case "Starred messages":
-                            return <StarBorderOutlinedIcon />;
-                          case "Archived chats":
-                            return <Inventory2OutlinedIcon />;
-                          case "Settings":
-                            return <SettingsOutlinedIcon />;
-                          case "Profile":
-                            return <Avatar sx={{ width: 24, height: 24 }} />;
-                          default:
-                            return null;
-                        }
-                      })()}
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={text}
-                      sx={[
-                        open
-                          ? {
-                              opacity: 1,
-                            }
-                          : {
-                              opacity: 0,
-                            },
-                      ]}
-                    />
-                  </ListItemButton>
-                </ListItem>
-              </Tooltip>
-            )
-          )}
         </List>
       </Drawer>
       <BasicMenu
         menuState={menuState}
         stateChangeFunction={stateChangeFunction}
       />
-      {console.log("Menu state from MiniDrawer: ", menuState)}
     </Box>
   );
 }

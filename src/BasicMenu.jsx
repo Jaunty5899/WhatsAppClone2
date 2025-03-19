@@ -301,12 +301,6 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
       <TabPanel value={value} index={10}>
         Item Ten
       </TabPanel>
-      {console.log(
-        "Menu and isOpen state from BasicMenu: ",
-        menuState,
-        " ",
-        isOpen
-      )}
     </Box>
   );
 }
