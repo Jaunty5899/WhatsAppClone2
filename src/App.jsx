@@ -66,7 +66,15 @@ function App() {
           </ButtonGroup>
         </Box>
         <TextField
-          sx={{ width: "100%" }}
+          sx={{
+            width: "100%",
+            "& .MuiInput-underline:before": {
+              borderBottomColor: "var(--accent-color)", // Change the underline color before focus
+            },
+            "& .MuiInput-underline:after": {
+              borderBottomColor: "var(--accent-color)", // Change the underline color after focus
+            },
+          }}
           id="standard-basic"
           // label="Search or start a new chat"
           placeholder="Search or start a new chat"
@@ -116,8 +124,8 @@ function App() {
           <UserSlip />
           <UserSlip />
           <UserSlip />
-          <UserSlip color="violet" />
-          <UserSlip color="Red" />
+          <UserSlip />
+          <UserSlip />
         </Box>
       </Box>
       <Box sx={{ p: 2, flexGrow: 1 }}></Box>

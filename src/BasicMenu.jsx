@@ -50,7 +50,7 @@ function a11yProps(index) {
 }
 
 export default function BasicMenu({ menuState }) {
-  const [value, setValue] = useState(menuState);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -87,7 +87,7 @@ export default function BasicMenu({ menuState }) {
             left: 5,
             width: "3px",
             borderRadius: 2,
-            backgroundColor: "#00e676",
+            backgroundColor: "var(--accent-color)",
           },
         }}
       >
@@ -101,7 +101,7 @@ export default function BasicMenu({ menuState }) {
             fontSize: "small",
             minHeight: 32,
             "&.Mui-selected": {
-              color: "#00e676",
+              color: "var(--accent-color)",
             },
           }}
           {...a11yProps(0)}
@@ -114,7 +114,7 @@ export default function BasicMenu({ menuState }) {
             fontSize: "small",
             minHeight: 32,
             "&.Mui-selected": {
-              color: "#00e676",
+              color: "var(--accent-color)",
             },
           }}
           label="Account"
@@ -129,7 +129,7 @@ export default function BasicMenu({ menuState }) {
             fontSize: "small",
             minHeight: 32,
             "&.Mui-selected": {
-              color: "#00e676",
+              color: "var(--accent-color)",
             },
           }}
           label="Chats"
@@ -144,7 +144,7 @@ export default function BasicMenu({ menuState }) {
             fontSize: "small",
             minHeight: 32,
             "&.Mui-selected": {
-              color: "#00e676",
+              color: "var(--accent-color)",
             },
           }}
           label="Video & voice"
@@ -159,7 +159,7 @@ export default function BasicMenu({ menuState }) {
             fontSize: "small",
             minHeight: 32,
             "&.Mui-selected": {
-              color: "#00e676",
+              color: "var(--accent-color)",
             },
           }}
           label="Notifications"
@@ -174,7 +174,7 @@ export default function BasicMenu({ menuState }) {
             fontSize: "small",
             minHeight: 32,
             "&.Mui-selected": {
-              color: "#00e676",
+              color: "var(--accent-color)",
             },
           }}
           label="Personalization"
@@ -189,7 +189,7 @@ export default function BasicMenu({ menuState }) {
             fontSize: "small",
             minHeight: 32,
             "&.Mui-selected": {
-              color: "#00e676",
+              color: "var(--accent-color)",
             },
           }}
           label="Storage"
@@ -204,7 +204,7 @@ export default function BasicMenu({ menuState }) {
             fontSize: "small",
             minHeight: 32,
             "&.Mui-selected": {
-              color: "#00e676",
+              color: "var(--accent-color)",
             },
           }}
           label="Shortcuts"
@@ -219,7 +219,7 @@ export default function BasicMenu({ menuState }) {
             fontSize: "small",
             minHeight: 32,
             "&.Mui-selected": {
-              color: "#00e676",
+              color: "var(--accent-color)",
             },
           }}
           label="Help"
@@ -228,13 +228,20 @@ export default function BasicMenu({ menuState }) {
         />
         <Box sx={{ height: 155 }} />
         <Tab
-          icon={<Avatar sx={{ width: 16, height: 16 }} />}
+          icon={
+            <Avatar
+              sx={{
+                width: 16,
+                height: 16,
+              }}
+            />
+          }
           sx={{
             justifyContent: "flex-start",
             fontSize: "small",
             minHeight: 32,
             "&.Mui-selected": {
-              color: "#00e676",
+              color: "var(--accent-color)",
             },
           }}
           label="Profile"
@@ -262,6 +269,15 @@ export default function BasicMenu({ menuState }) {
       </TabPanel>
       <TabPanel value={value} index={6}>
         Item Seven
+      </TabPanel>
+      <TabPanel value={value} index={7}>
+        Item Eight
+      </TabPanel>
+      <TabPanel value={value} index={8}>
+        Item Nine
+      </TabPanel>
+      <TabPanel value={value} index={9}>
+        Item Ten
       </TabPanel>
     </Box>
   );
