@@ -51,7 +51,7 @@ function a11yProps(index) {
 
 export default function BasicMenu({ menuState, stateChangeFunction }) {
   const [value, setValue] = useState(0);
-  const [isOpen, setIsOpen] = useState(menuState);
+  const [isOpen, setIsOpen] = useState(menuState.state);
   const divRef = useRef(null);
 
   const handleClickOutside = (event) => {
@@ -69,7 +69,8 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
   }, []);
 
   useEffect(() => {
-    setIsOpen(menuState);
+    setIsOpen(menuState.state);
+    setValue(menuState.item == "Profile" ? 10 : 0);
   }, [menuState]);
 
   const handleChange = (event, newValue) => {
@@ -297,7 +298,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
       <TabPanel value={value} index={8}>
         Item Nine
       </TabPanel>
-      <TabPanel value={value} index={9}>
+      <TabPanel value={value} index={10}>
         Item Ten
       </TabPanel>
       {console.log(

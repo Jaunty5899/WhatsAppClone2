@@ -256,7 +256,7 @@ export default function MiniDrawer() {
                   sx={{ display: "block" }}
                   onClick={() => {
                     if (text == "Settings" || text == "Profile") {
-                      setMenuState(true);
+                      setMenuState({ state: true, item: text });
                     }
                     handleDrawerClose();
                   }}
