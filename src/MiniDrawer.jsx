@@ -190,6 +190,7 @@ export default function MiniDrawer() {
                     setMenuState({ state: true, item: text });
                   }
                   handleDrawerClose();
+                  setSelectedItem(text);
                 }}
               >
                 <ListItemButton
@@ -227,17 +228,53 @@ export default function MiniDrawer() {
                         case "Chats":
                           return (
                             <ChatOutlinedIcon
-                            // sx={{ color: "var(--accent-color)" }}
+                              sx={
+                                selectedItem == text && {
+                                  color: "var(--accent-color)",
+                                }
+                              }
                             />
                           );
                         case "Calls":
-                          return <CallOutlinedIcon />;
+                          return (
+                            <CallOutlinedIcon
+                              sx={
+                                selectedItem == text && {
+                                  color: "var(--accent-color)",
+                                }
+                              }
+                            />
+                          );
                         case "Status":
-                          return <AutoModeOutlinedIcon />;
+                          return (
+                            <AutoModeOutlinedIcon
+                              sx={
+                                selectedItem == text && {
+                                  color: "var(--accent-color)",
+                                }
+                              }
+                            />
+                          );
                         case "Starred messages":
-                          return <StarBorderOutlinedIcon />;
+                          return (
+                            <StarBorderOutlinedIcon
+                              sx={
+                                selectedItem == text && {
+                                  color: "var(--accent-color)",
+                                }
+                              }
+                            />
+                          );
                         case "Archived chats":
-                          return <Inventory2OutlinedIcon />;
+                          return (
+                            <Inventory2OutlinedIcon
+                              sx={
+                                selectedItem == text && {
+                                  color: "var(--accent-color)",
+                                }
+                              }
+                            />
+                          );
                         case "Settings":
                           return <SettingsOutlinedIcon />;
                         case "Profile":
@@ -260,8 +297,15 @@ export default function MiniDrawer() {
                     ]}
                   />
                 </ListItemButton>
-                {(text == "Status" || text == "Archived chats") && <Divider />}
-                {text == "Status" && <Box sx={{ height: 320 }} />}
+                {(text == "Status" || text == "Archived chats") && (
+                  <Divider
+                    sx={{
+                      width: 30,
+                      margin: "10px auto 10px auto",
+                    }}
+                  />
+                )}
+                {text == "Status" && <Box sx={{ height: 280 }} />}
               </ListItem>
             </Tooltip>
           ))}

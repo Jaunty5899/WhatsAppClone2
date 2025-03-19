@@ -1,10 +1,7 @@
 import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
 import "./App.css";
 import MiniDrawer from "./MiniDrawer";
 import UserSlip from "./UserSlip";
-import BasicMenu from "./BasicMenu";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import ButtonGroup from "@mui/material/ButtonGroup";
@@ -108,6 +105,7 @@ function App() {
             flexDirection: "column",
             overflowY: "scroll",
             scrollbarWidth: "thin",
+            scrollbarColor: "#e0e0e0 transparent",
             height: "89%",
             gap: 3.5,
             paddingTop: 3,
