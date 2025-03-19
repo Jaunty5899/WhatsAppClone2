@@ -111,6 +111,10 @@ export default function MiniDrawer() {
   const [open, setOpen] = useState(false);
   const [menuState, setMenuState] = useState(false);
 
+  const stateChangeFunction = () => {
+    setMenuState(false);
+  };
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -321,7 +325,11 @@ export default function MiniDrawer() {
           )}
         </List>
       </Drawer>
-      <BasicMenu menuState={menuState} />
+      <BasicMenu
+        menuState={menuState}
+        stateChangeFunction={stateChangeFunction}
+      />
+      {console.log("Menu state from MiniDrawer: ", menuState)}
     </Box>
   );
 }
