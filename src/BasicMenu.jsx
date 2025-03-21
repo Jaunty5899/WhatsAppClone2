@@ -272,7 +272,14 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
         />
       </Tabs>
       <TabPanel value={value} index={0}>
-        Item One
+        <div className="generalContainer">
+          <h3 className="title general">General</h3>
+          <div
+            style={{ width: "100%", height: "100%", backgroundColor: "red" }}
+          >
+            hello
+          </div>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
