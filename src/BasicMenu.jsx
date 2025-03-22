@@ -282,94 +282,31 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <div className="generalContainer">
-          <h3 className="title general">General</h3>
-          <div
-            style={{ width: "100%", height: "100%", backgroundColor: "red" }}
-          >
-            hello
-          </div>
-        </div>
+        Item Two
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <div className="generalContainer">
-          <h3 className="title general">General</h3>
-          <div
-            style={{ width: "100%", height: "100%", backgroundColor: "red" }}
-          >
-            hello
-          </div>
-        </div>
+        Item Three
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <div className="generalContainer">
-          <h3 className="title general">General</h3>
-          <div
-            style={{ width: "100%", height: "100%", backgroundColor: "red" }}
-          >
-            hello
-          </div>
-        </div>
+        Item Four
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <div className="generalContainer">
-          <h3 className="title general">General</h3>
-          <div
-            style={{ width: "100%", height: "100%", backgroundColor: "red" }}
-          >
-            hello
-          </div>
-        </div>
+        Item Five
       </TabPanel>
       <TabPanel value={value} index={5}>
-        <div className="generalContainer">
-          <h3 className="title general">General</h3>
-          <div
-            style={{ width: "100%", height: "100%", backgroundColor: "red" }}
-          >
-            hello
-          </div>
-        </div>
+        Item Six
       </TabPanel>
       <TabPanel value={value} index={6}>
-        <div className="generalContainer">
-          <h3 className="title general">General</h3>
-          <div
-            style={{ width: "100%", height: "100%", backgroundColor: "red" }}
-          >
-            hello
-          </div>
-        </div>
+        Item Seven
       </TabPanel>
       <TabPanel value={value} index={7}>
-        <div className="generalContainer">
-          <h3 className="title general">General</h3>
-          <div
-            style={{ width: "100%", height: "100%", backgroundColor: "red" }}
-          >
-            hello
-          </div>
-        </div>
+        Item Eight
       </TabPanel>
       <TabPanel value={value} index={8}>
-        <div className="generalContainer">
-          <h3 className="title general">General</h3>
-          <div
-            style={{ width: "100%", height: "100%", backgroundColor: "red" }}
-          >
-            hello
-          </div>
-        </div>
+        Item Nine
       </TabPanel>
       <TabPanel value={value} index={10}>
-        <div className="generalContainer">
-          <h3 className="title general">General</h3>
-          <div
-            style={{ width: "100%", height: "100%", backgroundColor: "red" }}
-          >
-            hello
-          </div>
-        </div>
+        Item Ten
       </TabPanel>
     </Box>
   );
