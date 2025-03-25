@@ -1,0 +1,18 @@
+.generalContainer {
+  width: 270px;
+}
+.switchContainer {
+  display: flex;
+  width: 270px;
+  justify-content: space-between;
+  align-items: center;
+}
+.generalItemTitle {
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+}
+.typingContainer {
+  font-size: 13px;
+}

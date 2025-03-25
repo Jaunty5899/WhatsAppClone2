@@ -15,6 +15,12 @@ import StorageOutlinedIcon from "@mui/icons-material/StorageOutlined";
 import KeyboardAltOutlinedIcon from "@mui/icons-material/KeyboardAltOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import Avatar from "@mui/material/Avatar";
+import Switch from "@mui/material/Switch";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -53,6 +59,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
   const [value, setValue] = useState(0);
   const [isOpen, setIsOpen] = useState(menuState.state);
   const divRef = useRef(null);
+  const [language, setLanguage] = useState("");
 
   const handleClickOutside = (event) => {
     if (divRef.current && !divRef.current.contains(event.target)) {
@@ -83,7 +90,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
       sx={{
         bgcolor: "background.paper",
         display: "flex",
-        width: 450,
+        width: 500,
         height: 500,
         position: "absolute",
         bottom: "1%",
@@ -272,12 +279,46 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
         />
       </Tabs>
       <TabPanel value={value} index={0}>
+        <h3 className="title general">General</h3>
         <div className="generalContainer">
-          <h3 className="title general">General</h3>
-          <div
-            style={{ width: "100%", height: "100%", backgroundColor: "red" }}
-          >
-            hello
+          <div className="generalItem">
+            <h4 className="generalItemTitle">Login</h4>
+            <div className="switchContainer">
+              <span style={{ fontSize: 15 }}>Start WhatsApp at login</span>
+              <FormControl component="fieldset">
+                <FormGroup aria-label="position" row>
+                  <FormControlLabel
+                    control={<Switch color="primary" size="small" />}
+                    label="Off"
+                    labelPlacement="start"
+                  />
+                </FormGroup>
+              </FormControl>
+            </div>
+          </div>
+          <div className="generalItem">
+            <h4 className="generalItemTitle">Language</h4>
+            <div className="dropDownContainer">
+              <FormControl fullWidth>
+                <Select
+                  id="demo-simple-select"
+                  value={language}
+                  onChange={(e) => setLanguage(e.target.value)}
+                  sx={{ width: "70%", height: "35px" }}
+                >
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+          </div>
+          <div className="generalItem">
+            <h4 className="generalItemTitle">Typing</h4>
+            <div className="typingContainer">
+              Change typing settings for autocorrect and misspelled highlight
+              from <a href="#">Windows Settings</a>.
+            </div>
           </div>
         </div>
       </TabPanel>
