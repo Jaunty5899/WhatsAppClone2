@@ -87,6 +87,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
   return (
     <Box
       ref={divRef}
+      id="basicMenu"
       sx={{
         bgcolor: "background.paper",
         display: "flex",
@@ -278,7 +279,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
           {...a11yProps(9)}
         />
       </Tabs>
-      <TabPanel value={value} index={0}>
+      <TabPanel value={value} index={0} id="general" scroll="paper">
         <h3 className="title general">General</h3>
         <div className="generalContainer">
           <div className="generalItem">
@@ -344,6 +345,18 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
                   />
                 </FormGroup>
               </FormControl>
+            </div>
+          </div>
+          <div className="generalItem lastItem">
+            <div className="typingContainer">
+              To log out of WhatsApp on this computer go to your{" "}
+              <a href="#">Profile</a>.
+            </div>
+          </div>
+          <div className="generalItem lastItem">
+            <div className="typingContainer">
+              To log out of WhatsApp on this computer go to your{" "}
+              <a href="#">Profile</a>.
             </div>
           </div>
           <div className="generalItem lastItem">
