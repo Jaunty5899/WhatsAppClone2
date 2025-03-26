@@ -10,9 +10,15 @@
 .generalItemTitle {
   margin-bottom: 5px;
   font-size: 16px;
-  font-weight: 500;
-  color: rgba(0, 0, 0, 0.5);
+  font-weight: 400;
 }
-.typingContainer {
+.typingContainer,
+#demo-simple-select {
   font-size: 13px;
+}
+.thisText {
+  max-width: 200px;
+}
+.lastItem {
+  margin-top: 21.28px;
 }

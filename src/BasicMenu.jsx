@@ -284,11 +284,11 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
           <div className="generalItem">
             <h4 className="generalItemTitle">Login</h4>
             <div className="switchContainer">
-              <span style={{ fontSize: 15 }}>Start WhatsApp at login</span>
+              <span className="typingContainer">Start WhatsApp at login</span>
               <FormControl component="fieldset">
                 <FormGroup aria-label="position" row>
                   <FormControlLabel
-                    control={<Switch color="primary" size="small" />}
+                    control={<Switch color="success" size="small" />}
                     label="Off"
                     labelPlacement="start"
                   />
@@ -304,11 +304,20 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
                   id="demo-simple-select"
                   value={language}
                   onChange={(e) => setLanguage(e.target.value)}
-                  sx={{ width: "70%", height: "35px" }}
+                  sx={{
+                    width: "70%",
+                    height: "35px",
+                  }}
                 >
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
+                  <MenuItem id="demo-simple-select" value={10}>
+                    Ten
+                  </MenuItem>
+                  <MenuItem id="demo-simple-select" value={20}>
+                    Twenty
+                  </MenuItem>
+                  <MenuItem id="demo-simple-select" value={30}>
+                    Thirty
+                  </MenuItem>
                 </Select>
               </FormControl>
             </div>
@@ -318,6 +327,29 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
             <div className="typingContainer">
               Change typing settings for autocorrect and misspelled highlight
               from <a href="#">Windows Settings</a>.
+            </div>
+          </div>
+          <div className="generalItem">
+            <h4 className="generalItemTitle">Replace text with emoji</h4>
+            <div className="switchContainer">
+              <span className="typingContainer thisText">
+                Emoji will replace specific text as you type.
+              </span>
+              <FormControl component="fieldset">
+                <FormGroup aria-label="position" row>
+                  <FormControlLabel
+                    control={<Switch color="success" size="small" />}
+                    label="😁"
+                    labelPlacement="start"
+                  />
+                </FormGroup>
+              </FormControl>
+            </div>
+          </div>
+          <div className="generalItem lastItem">
+            <div className="typingContainer">
+              To log out of WhatsApp on this computer go to your{" "}
+              <a href="#">Profile</a>.
             </div>
           </div>
         </div>
