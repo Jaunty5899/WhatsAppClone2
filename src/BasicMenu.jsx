@@ -279,7 +279,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
           {...a11yProps(9)}
         />
       </Tabs>
-      <TabPanel value={value} index={0} id="general" scroll="paper">
+      <TabPanel value={value} index={0} id="general">
         <h3 className="title general">General</h3>
         <div className="generalContainer">
           <div className="generalItem">
@@ -353,45 +353,49 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
               <a href="#">Profile</a>.
             </div>
           </div>
-          <div className="generalItem lastItem">
-            <div className="typingContainer">
-              To log out of WhatsApp on this computer go to your{" "}
-              <a href="#">Profile</a>.
+        </div>
+      </TabPanel>
+      <TabPanel value={value} index={1} id="general">
+        <h3 className="title general">Account</h3>
+        <div className="generalContainer">
+          <div className="generalItem">
+            <h4 className="generalItemTitle">Privacy</h4>
+            <div className="typingContainer" style={{ fontStyle: "italic" }}>
+              Managed on your phone.
             </div>
-          </div>
-          <div className="generalItem lastItem">
+            <div className="typingContainer subTitle">Last seen and online</div>
+            <div className="typingContainer" style={{ fontSize: "smaller" }}>
+              Nobody
+            </div>
             <div className="typingContainer">
-              To log out of WhatsApp on this computer go to your{" "}
-              <a href="#">Profile</a>.
+              If you don't share your last seen, you won't be able to see other
+              people's Last Seen.
             </div>
           </div>
         </div>
       </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={2} id="general">
         Item Three
       </TabPanel>
-      <TabPanel value={value} index={3}>
+      <TabPanel value={value} index={3} id="general">
         Item Four
       </TabPanel>
-      <TabPanel value={value} index={4}>
+      <TabPanel value={value} index={4} id="general">
         Item Five
       </TabPanel>
-      <TabPanel value={value} index={5}>
+      <TabPanel value={value} index={5} id="general">
         Item Six
       </TabPanel>
-      <TabPanel value={value} index={6}>
+      <TabPanel value={value} index={6} id="general">
         Item Seven
       </TabPanel>
-      <TabPanel value={value} index={7}>
+      <TabPanel value={value} index={7} id="general">
         Item Eight
       </TabPanel>
-      <TabPanel value={value} index={8}>
+      <TabPanel value={value} index={8} id="general">
         Item Nine
       </TabPanel>
-      <TabPanel value={value} index={10}>
+      <TabPanel value={value} index={10} id="general">
         Item Ten
       </TabPanel>
     </Box>
