@@ -14,7 +14,7 @@
 .generalContainer {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   margin-top: 15px;
 }
 .switchContainer {
@@ -24,8 +24,8 @@
   align-items: center;
 }
 .generalItemTitle {
-  margin-bottom: 5px;
-  font-size: 16px;
+  margin-bottom: 0;
+  font-size: 18px;
   font-weight: 400;
 }
 .typingContainer,
@@ -41,4 +41,20 @@ h4 {
 .subTitle {
   opacity: 0.8;
   margin-top: 10px;
+  font-size: 14px;
 }
+.description {
+  font-size: 11px;
+  opacity: 0.8;
+}
+.thisOne {
+  gap: 0px;
+}
+.iconWithText {
+  display: flex;
+}
+.link {
+  color: var(--accent-color);
+}
+
+/* git add . && git commit -m '' && git push origin main */

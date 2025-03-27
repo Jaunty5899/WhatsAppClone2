@@ -21,6 +21,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
+import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -327,7 +328,11 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
             <h4 className="generalItemTitle">Typing</h4>
             <div className="typingContainer">
               Change typing settings for autocorrect and misspelled highlight
-              from <a href="#">Windows Settings</a>.
+              from{" "}
+              <a href="#" className="link">
+                Windows Settings
+              </a>
+              .
             </div>
           </div>
           <div className="generalItem">
@@ -350,27 +355,107 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
           <div className="generalItem lastItem">
             <div className="typingContainer">
               To log out of WhatsApp on this computer go to your{" "}
-              <a href="#">Profile</a>.
+              <a href="#" className="link">
+                Profile
+              </a>
+              .
             </div>
           </div>
         </div>
       </TabPanel>
       <TabPanel value={value} index={1} id="general">
         <h3 className="title general">Account</h3>
-        <div className="generalContainer">
+        <div className="generalContainer thisOne">
           <div className="generalItem">
             <h4 className="generalItemTitle">Privacy</h4>
             <div className="typingContainer" style={{ fontStyle: "italic" }}>
               Managed on your phone.
             </div>
+          </div>
+          <div className="generalItem">
             <div className="typingContainer subTitle">Last seen and online</div>
-            <div className="typingContainer" style={{ fontSize: "smaller" }}>
-              Nobody
-            </div>
-            <div className="typingContainer">
+            <div>Nobody</div>
+            <div className="typingContainer description">
               If you don't share your last seen, you won't be able to see other
               people's Last Seen.
             </div>
+          </div>
+          <div className="generalItem">
+            <div className="typingContainer subTitle">Profile photo</div>
+            <div>My contacts except...</div>
+          </div>
+          <div className="generalItem">
+            <div className="typingContainer subTitle">About</div>
+            <div>My contacts except...</div>
+          </div>
+          <div className="generalItem">
+            <div className="typingContainer subTitle">Add to groups</div>
+            <div>My contacts</div>
+          </div>
+          <div className="generalItem">
+            <div className="typingContainer subTitle">Read receipts</div>
+            <div>Off</div>
+            <div className="typingContainer description">
+              Read receipts are always sent for group chats.
+            </div>
+          </div>
+        </div>
+        <div className="generalContainer">
+          <div className="generalItem">
+            <h4 className="generalItemTitle">Blocked contacts</h4>
+            <div className="typingContainer" style={{ fontStyle: "italic" }}>
+              Managed on your phone.
+            </div>
+            <div
+              className="typingContainer iconWithText"
+              style={{ marginTop: "10px" }}
+            >
+              <PhoneAndroidOutlinedIcon sx={{ width: 18, height: 18 }} />
+              No blocked contacts
+            </div>
+          </div>
+        </div>
+        <div className="generalContainer">
+          <div className="generalItem">
+            <h4 className="generalItemTitle">Security</h4>
+            <div className="typingContainer">
+              Messages and calls are end-to-end encrypted chats stay between you
+              and the people you choose. Not even WhatsApp can read or listen to
+              them.{" "}
+              <a href="#" className="link">
+                Learn more
+              </a>
+            </div>
+            <div className="typingContainer" style={{ marginTop: "10px" }}>
+              Show security notifications on this computer
+            </div>
+            <FormControl
+              component="fieldset"
+              sx={{ marginTop: "10px", marginLeft: "10px" }}
+            >
+              <FormGroup aria-label="position" row>
+                <FormControlLabel
+                  control={<Switch color="success" size="small" />}
+                  label="Off"
+                  labelPlacement="end"
+                />
+              </FormGroup>
+            </FormControl>
+            <div className="typingContainer" style={{ marginTop: "10px" }}>
+              Get notified when your security code changes for a contact's
+              phone. If you have multiple devices, this setting must be enabled
+              on each device where you want to get notifications.{" "}
+              <a href="#" className="link">
+                Learn more
+              </a>
+            </div>
+            <a
+              href="#"
+              className="link"
+              style={{ display: "block", marginTop: "20px" }}
+            >
+              How to delete my account
+            </a>
           </div>
         </div>
       </TabPanel>
