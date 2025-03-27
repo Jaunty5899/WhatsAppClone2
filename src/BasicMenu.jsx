@@ -170,21 +170,6 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
           {...a11yProps(2)}
         />
         <Tab
-          icon={<VideocamOutlinedIcon sx={{ width: 16, height: 16 }} />}
-          sx={{
-            display: "flex",
-            justifyContent: "flex-start",
-            fontSize: "small",
-            minHeight: 32,
-            "&.Mui-selected": {
-              color: "var(--accent-color)",
-            },
-          }}
-          label="Video & voice"
-          iconPosition="start"
-          {...a11yProps(3)}
-        />
-        <Tab
           icon={<NotificationsOutlinedIcon sx={{ width: 16, height: 16 }} />}
           sx={{
             display: "flex",
@@ -197,7 +182,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
           }}
           label="Notifications"
           iconPosition="start"
-          {...a11yProps(4)}
+          {...a11yProps(3)}
         />
         <Tab
           icon={<BrushOutlinedIcon sx={{ width: 16, height: 16 }} />}
@@ -212,7 +197,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
           }}
           label="Personalization"
           iconPosition="start"
-          {...a11yProps(5)}
+          {...a11yProps(4)}
         />
         <Tab
           icon={<StorageOutlinedIcon sx={{ width: 16, height: 16 }} />}
@@ -227,7 +212,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
           }}
           label="Storage"
           iconPosition="start"
-          {...a11yProps(6)}
+          {...a11yProps(5)}
         />
         <Tab
           icon={<KeyboardAltOutlinedIcon sx={{ width: 16, height: 16 }} />}
@@ -242,7 +227,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
           }}
           label="Shortcuts"
           iconPosition="start"
-          {...a11yProps(7)}
+          {...a11yProps(6)}
         />
         <Tab
           icon={<InfoOutlinedIcon sx={{ width: 16, height: 16 }} />}
@@ -257,9 +242,9 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
           }}
           label="Help"
           iconPosition="start"
-          {...a11yProps(8)}
+          {...a11yProps(7)}
         />
-        <Box sx={{ height: 155 }} />
+        <Box sx={{ height: 180 }} />
         <Tab
           icon={
             <Avatar
@@ -279,7 +264,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
           }}
           label="Profile"
           iconPosition="start"
-          {...a11yProps(9)}
+          {...a11yProps(8)}
         />
       </Tabs>
       <TabPanel value={value} index={0} id="general">
@@ -526,24 +511,21 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={3} id="general">
-        Item Four
-      </TabPanel>
-      <TabPanel value={value} index={4} id="general">
         Item Five
       </TabPanel>
-      <TabPanel value={value} index={5} id="general">
+      <TabPanel value={value} index={4} id="general">
         Item Six
       </TabPanel>
-      <TabPanel value={value} index={6} id="general">
+      <TabPanel value={value} index={5} id="general">
         Item Seven
       </TabPanel>
-      <TabPanel value={value} index={7} id="general">
+      <TabPanel value={value} index={6} id="general">
         Item Eight
       </TabPanel>
-      <TabPanel value={value} index={8} id="general">
+      <TabPanel value={value} index={7} id="general">
         Item Nine
       </TabPanel>
-      <TabPanel value={value} index={10} id="general">
+      <TabPanel value={value} index={9} id="general">
         Item Ten
       </TabPanel>
     </Box>
