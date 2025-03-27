@@ -22,6 +22,8 @@ import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
+import PhonelinkOutlinedIcon from "@mui/icons-material/PhonelinkOutlined";
+import Button from "@mui/material/Button";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -410,7 +412,9 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
               className="typingContainer iconWithText"
               style={{ marginTop: "10px" }}
             >
-              <PhoneAndroidOutlinedIcon sx={{ width: 18, height: 18 }} />
+              <PhoneAndroidOutlinedIcon
+                sx={{ width: 18, height: 18, marginRight: 1 }}
+              />
               No blocked contacts
             </div>
           </div>
@@ -460,7 +464,66 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={2} id="general">
-        Item Three
+        <h3 className="title general">Chats</h3>
+        <div className="generalContainer">
+          <div className="generalItem">
+            <h4 className="generalItemTitle">Chat history</h4>
+            <div
+              className="typingContainer iconWithText"
+              style={{ marginTop: "10px" }}
+            >
+              <PhonelinkOutlinedIcon
+                sx={{ width: 18, height: 18, marginRight: 1 }}
+              />
+              Synced with your phone
+            </div>
+          </div>
+          <div className="generalItem">
+            <Button
+              variant="outlined"
+              sx={{
+                marginTop: 2,
+                color: "var(--accent-color)",
+                borderColor: "var(--accent-color)",
+              }}
+            >
+              Archive all chats
+            </Button>
+            <div className="typingContainer" style={{ marginTop: "10px" }}>
+              You will still receive new messages from archived chats.
+            </div>
+          </div>
+          <div className="generalItem">
+            <Button
+              variant="outlined"
+              sx={{
+                marginTop: 2,
+                color: "red",
+                borderColor: "red",
+              }}
+            >
+              Clear all messages
+            </Button>
+            <div className="typingContainer" style={{ marginTop: "10px" }}>
+              Delete all messages from chats and groups.
+            </div>
+          </div>
+          <div className="generalItem">
+            <Button
+              variant="outlined"
+              sx={{
+                marginTop: 2,
+                color: "red",
+                borderColor: "red",
+              }}
+            >
+              Delete all chats
+            </Button>
+            <div className="typingContainer" style={{ marginTop: "10px" }}>
+              Delete all messages and clear the chats from your history.
+            </div>
+          </div>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={3} id="general">
         Item Four
