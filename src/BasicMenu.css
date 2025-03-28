@@ -56,5 +56,14 @@ h4 {
 .link {
   color: var(--accent-color);
 }
+.dropDownContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 192px;
+  margin-top: 5px;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+}
 
 /* git add . && git commit -m '' && git push origin main */

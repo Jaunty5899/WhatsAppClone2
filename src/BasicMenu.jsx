@@ -8,7 +8,6 @@ import Box from "@mui/material/Box";
 import ComputerOutlinedIcon from "@mui/icons-material/ComputerOutlined";
 import KeyOutlinedIcon from "@mui/icons-material/KeyOutlined";
 import QuestionAnswerOutlinedIcon from "@mui/icons-material/QuestionAnswerOutlined";
-import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import BrushOutlinedIcon from "@mui/icons-material/BrushOutlined";
 import StorageOutlinedIcon from "@mui/icons-material/StorageOutlined";
@@ -24,6 +23,7 @@ import Select from "@mui/material/Select";
 import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
 import PhonelinkOutlinedIcon from "@mui/icons-material/PhonelinkOutlined";
 import Button from "@mui/material/Button";
+import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -288,14 +288,26 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
           <div className="generalItem">
             <h4 className="generalItemTitle">Language</h4>
             <div className="dropDownContainer">
+              <LanguageOutlinedIcon
+                sx={{
+                  width: 18,
+                  height: 18,
+                  marginLeft: 1,
+                  marginRight: 1,
+                  color: "var(--accent-color)",
+                }}
+              />
               <FormControl fullWidth>
                 <Select
                   id="demo-simple-select"
                   value={language}
                   onChange={(e) => setLanguage(e.target.value)}
                   sx={{
-                    width: "70%",
+                    width: "100%",
                     height: "35px",
+                    "& .MuiOutlinedInput-notchedOutline": {
+                      border: "none",
+                    },
                   }}
                 >
                   <MenuItem id="demo-simple-select" value={10}>
