@@ -80,7 +80,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
 
   useEffect(() => {
     setIsOpen(menuState.state);
-    setValue(menuState.item == "Profile" ? 10 : 0);
+    setValue(menuState.item == "Profile" ? 9 : 0);
   }, [menuState]);
 
   const handleChange = (event, newValue) => {

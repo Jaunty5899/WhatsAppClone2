@@ -182,17 +182,7 @@ export default function MiniDrawer() {
             "Profile",
           ].map((text, index) => (
             <Tooltip key={uuid()} title={text} placement="top">
-              <ListItem
-                disablePadding
-                sx={{ display: "block" }}
-                onClick={() => {
-                  if (text == "Settings" || text == "Profile") {
-                    setMenuState({ state: true, item: text });
-                  }
-                  handleDrawerClose();
-                  setSelectedItem(text);
-                }}
-              >
+              <ListItem disablePadding sx={{ display: "block" }}>
                 <ListItemButton
                   sx={[
                     {
@@ -207,6 +197,13 @@ export default function MiniDrawer() {
                           justifyContent: "center",
                         },
                   ]}
+                  onClick={() => {
+                    if (text == "Settings" || text == "Profile") {
+                      setMenuState({ state: true, item: text });
+                    }
+                    handleDrawerClose();
+                    setSelectedItem(text);
+                  }}
                 >
                   <ListItemIcon
                     sx={[
