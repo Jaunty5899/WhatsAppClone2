@@ -181,8 +181,8 @@ export default function MiniDrawer() {
             "Settings",
             "Profile",
           ].map((text, index) => (
-            <Tooltip key={uuid()} title={text} placement="top">
-              <ListItem disablePadding sx={{ display: "block" }}>
+            <ListItem disablePadding sx={{ display: "block" }}>
+              <Tooltip key={uuid()} title={text} placement="top">
                 <ListItemButton
                   sx={[
                     {
@@ -294,17 +294,17 @@ export default function MiniDrawer() {
                     ]}
                   />
                 </ListItemButton>
-                {(text == "Status" || text == "Archived chats") && (
-                  <Divider
-                    sx={{
-                      width: 30,
-                      margin: "10px auto 10px auto",
-                    }}
-                  />
-                )}
-                {text == "Status" && <Box sx={{ height: 280 }} />}
-              </ListItem>
-            </Tooltip>
+              </Tooltip>
+              {(text == "Status" || text == "Archived chats") && (
+                <Divider
+                  sx={{
+                    width: 30,
+                    margin: "10px auto 10px auto",
+                  }}
+                />
+              )}
+              {text == "Status" && <Box sx={{ height: 280 }} />}
+            </ListItem>
           ))}
         </List>
       </Drawer>
