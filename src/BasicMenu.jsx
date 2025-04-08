@@ -64,6 +64,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
   const [isOpen, setIsOpen] = useState(menuState.state);
   const divRef = useRef(null);
   const [language, setLanguage] = useState("System Default");
+  const [bannerNotification, setBannerNotification] = useState("Always");
 
   const handleClickOutside = (event) => {
     if (divRef.current && !divRef.current.contains(event.target)) {
@@ -533,22 +534,15 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
             <img src={notificationLogo} alt="" style={{ scale: 0.95 }} />
           </div>
           <div className="generalItem">
-            <h4 className="generalItemTitle">Language</h4>
+            <div className="typingContainer subTitle">
+              Show banner notifications
+            </div>
             <div className="dropDownContainer">
-              <LanguageOutlinedIcon
-                sx={{
-                  width: 18,
-                  height: 18,
-                  marginLeft: 1,
-                  marginRight: 1,
-                  color: "var(--accent-color)",
-                }}
-              />
               <FormControl fullWidth>
                 <Select
                   id="demo-simple-select"
-                  value={language}
-                  onChange={(e) => setLanguage(e.target.value)}
+                  value={bannerNotification}
+                  onChange={(e) => setBannerNotification(e.target.value)}
                   sx={{
                     width: "100%",
                     height: "35px",
@@ -557,50 +551,54 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
                     },
                   }}
                 >
-                  <MenuItem id="demo-simple-select" value="System Default">
-                    System Default
+                  <MenuItem id="demo-simple-select" value="Always">
+                    Always
                   </MenuItem>
-                  <MenuItem id="demo-simple-select" value="English">
-                    English
+                  <MenuItem id="demo-simple-select" value="Never">
+                    Never
                   </MenuItem>
-                  <MenuItem id="demo-simple-select" value="Hindi">
-                    Hindi
-                  </MenuItem>
-                  <MenuItem id="demo-simple-select" value="Malayalam">
-                    Malayalam
+                  <MenuItem
+                    id="demo-simple-select"
+                    value="Only when app is open"
+                  >
+                    Only when app is open
                   </MenuItem>
                 </Select>
               </FormControl>
             </div>
           </div>
           <div className="generalItem">
-            <Button
-              variant="outlined"
-              sx={{
-                marginTop: 2,
-                color: "red",
-                borderColor: "red",
-              }}
-            >
-              Clear all messages
-            </Button>
-            <div className="typingContainer" style={{ marginTop: "10px" }}>
-              Delete all messages from chats and groups.
+            <div className="typingContainer subTitle">
+              Show taskbar notification badge
             </div>
-          </div>
-          <div className="generalItem">
-            <Button
-              variant="outlined"
-              sx={{
-                marginTop: 2,
-                color: "red",
-                borderColor: "red",
-              }}
-            >
-              Delete all chats
-            </Button>
-            <div className="typingContainer" style={{ marginTop: "10px" }}>
-              Delete all messages and clear the chats from your history.
+            <div className="dropDownContainer">
+              <FormControl fullWidth>
+                <Select
+                  id="demo-simple-select"
+                  value={bannerNotification}
+                  onChange={(e) => setBannerNotification(e.target.value)}
+                  sx={{
+                    width: "100%",
+                    height: "35px",
+                    "& .MuiOutlinedInput-notchedOutline": {
+                      border: "none",
+                    },
+                  }}
+                >
+                  <MenuItem id="demo-simple-select" value="Always">
+                    Always
+                  </MenuItem>
+                  <MenuItem id="demo-simple-select" value="Never">
+                    Never
+                  </MenuItem>
+                  <MenuItem
+                    id="demo-simple-select"
+                    value="Only when app is open"
+                  >
+                    Only when app is open
+                  </MenuItem>
+                </Select>
+              </FormControl>
             </div>
           </div>
         </div>

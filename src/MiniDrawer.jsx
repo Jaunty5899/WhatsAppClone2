@@ -181,8 +181,8 @@ export default function MiniDrawer() {
             "Settings",
             "Profile",
           ].map((text, index) => (
-            <ListItem disablePadding sx={{ display: "block" }}>
-              <Tooltip key={uuid()} title={text} placement="top">
+            <ListItem key={uuid()} disablePadding sx={{ display: "block" }}>
+              <Tooltip title={text} placement="top">
                 <ListItemButton
                   sx={[
                     {
