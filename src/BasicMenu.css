@@ -65,5 +65,9 @@ h4 {
   border: 1px solid var(--accent-color);
   border-radius: 4px;
 }
-
+.generalItem img {
+  display: flex;
+  position: relative;
+  right: 10px;
+}
 /* git add . && git commit -m '' && git push origin main */

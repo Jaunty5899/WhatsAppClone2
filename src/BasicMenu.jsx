@@ -24,6 +24,7 @@ import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
 import PhonelinkOutlinedIcon from "@mui/icons-material/PhonelinkOutlined";
 import Button from "@mui/material/Button";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
+import notificationLogo from "/Capture.svg";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -62,7 +63,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
   const [value, setValue] = useState(0);
   const [isOpen, setIsOpen] = useState(menuState.state);
   const divRef = useRef(null);
-  const [language, setLanguage] = useState("");
+  const [language, setLanguage] = useState("System Default");
 
   const handleClickOutside = (event) => {
     if (divRef.current && !divRef.current.contains(event.target)) {
@@ -310,14 +311,17 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
                     },
                   }}
                 >
-                  <MenuItem id="demo-simple-select" value={10}>
-                    Ten
+                  <MenuItem id="demo-simple-select" value="System Default">
+                    System Default
                   </MenuItem>
-                  <MenuItem id="demo-simple-select" value={20}>
-                    Twenty
+                  <MenuItem id="demo-simple-select" value="English">
+                    English
                   </MenuItem>
-                  <MenuItem id="demo-simple-select" value={30}>
-                    Thirty
+                  <MenuItem id="demo-simple-select" value="Hindi">
+                    Hindi
+                  </MenuItem>
+                  <MenuItem id="demo-simple-select" value="Malayalam">
+                    Malayalam
                   </MenuItem>
                 </Select>
               </FormControl>
@@ -523,33 +527,50 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={3} id="general">
-        <h3 className="title general">Chats</h3>
+        <h3 className="title general">Notifications</h3>
         <div className="generalContainer">
           <div className="generalItem">
-            <h4 className="generalItemTitle">Chat history</h4>
-            <div
-              className="typingContainer iconWithText"
-              style={{ marginTop: "10px" }}
-            >
-              <PhonelinkOutlinedIcon
-                sx={{ width: 18, height: 18, marginRight: 1 }}
-              />
-              Synced with your phone
-            </div>
+            <img src={notificationLogo} alt="" style={{ scale: 0.95 }} />
           </div>
           <div className="generalItem">
-            <Button
-              variant="outlined"
-              sx={{
-                marginTop: 2,
-                color: "var(--accent-color)",
-                borderColor: "var(--accent-color)",
-              }}
-            >
-              Archive all chats
-            </Button>
-            <div className="typingContainer" style={{ marginTop: "10px" }}>
-              You will still receive new messages from archived chats.
+            <h4 className="generalItemTitle">Language</h4>
+            <div className="dropDownContainer">
+              <LanguageOutlinedIcon
+                sx={{
+                  width: 18,
+                  height: 18,
+                  marginLeft: 1,
+                  marginRight: 1,
+                  color: "var(--accent-color)",
+                }}
+              />
+              <FormControl fullWidth>
+                <Select
+                  id="demo-simple-select"
+                  value={language}
+                  onChange={(e) => setLanguage(e.target.value)}
+                  sx={{
+                    width: "100%",
+                    height: "35px",
+                    "& .MuiOutlinedInput-notchedOutline": {
+                      border: "none",
+                    },
+                  }}
+                >
+                  <MenuItem id="demo-simple-select" value="System Default">
+                    System Default
+                  </MenuItem>
+                  <MenuItem id="demo-simple-select" value="English">
+                    English
+                  </MenuItem>
+                  <MenuItem id="demo-simple-select" value="Hindi">
+                    Hindi
+                  </MenuItem>
+                  <MenuItem id="demo-simple-select" value="Malayalam">
+                    Malayalam
+                  </MenuItem>
+                </Select>
+              </FormControl>
             </div>
           </div>
           <div className="generalItem">
