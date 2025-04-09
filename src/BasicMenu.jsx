@@ -25,6 +25,10 @@ import PhonelinkOutlinedIcon from "@mui/icons-material/PhonelinkOutlined";
 import Button from "@mui/material/Button";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import notificationLogo from "/Capture.svg";
+import Divider from "@mui/material/Divider";
+import PlayArrowOutlinedIcon from "@mui/icons-material/PlayArrowOutlined";
+import MusicNoteOutlinedIcon from "@mui/icons-material/MusicNoteOutlined";
+import { red } from "@mui/material/colors";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -65,6 +69,8 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
   const divRef = useRef(null);
   const [language, setLanguage] = useState("System Default");
   const [bannerNotification, setBannerNotification] = useState("Always");
+  const [messageTone, setMessageTone] = useState("Default");
+  const [groupTone, setGroupTone] = useState("Default");
 
   const handleClickOutside = (event) => {
     if (divRef.current && !divRef.current.contains(event.target)) {
@@ -599,6 +605,217 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
                   </MenuItem>
                 </Select>
               </FormControl>
+            </div>
+          </div>
+          <div className="generalItem">
+            <div className="switchContainer">
+              <span className="typingContainer">Messages</span>
+              <FormControl component="fieldset">
+                <FormGroup aria-label="position" row>
+                  <FormControlLabel
+                    control={<Switch color="success" size="small" />}
+                    label="Off"
+                    labelPlacement="start"
+                  />
+                </FormGroup>
+              </FormControl>
+            </div>
+          </div>
+          <div className="generalItem">
+            <div className="switchContainer">
+              <span className="typingContainer">Calls</span>
+              <FormControl component="fieldset">
+                <FormGroup aria-label="position" row>
+                  <FormControlLabel
+                    control={<Switch color="success" size="small" />}
+                    label="Off"
+                    labelPlacement="start"
+                  />
+                </FormGroup>
+              </FormControl>
+            </div>
+          </div>
+          <div className="generalItem">
+            <div className="typingContainer subTitle">Reactions</div>
+            <div className="switchContainer">
+              <span className="typingContainer thisText">
+                Show notifications for reactions to messages you send
+              </span>
+              <FormControl component="fieldset">
+                <FormGroup aria-label="position" row>
+                  <FormControlLabel
+                    control={<Switch color="success" size="small" />}
+                    label="Off"
+                    labelPlacement="start"
+                  />
+                </FormGroup>
+              </FormControl>
+            </div>
+          </div>
+          <div className="generalItem">
+            <div className="typingContainer subTitle">Status reactions</div>
+            <div className="switchContainer">
+              <span className="typingContainer thisText">
+                Show notifications when you get likes on a status
+              </span>
+              <FormControl component="fieldset">
+                <FormGroup aria-label="position" row>
+                  <FormControlLabel
+                    control={<Switch color="success" size="small" />}
+                    label="Off"
+                    labelPlacement="start"
+                  />
+                </FormGroup>
+              </FormControl>
+            </div>
+          </div>
+          <Divider
+            sx={{
+              width: `${100}%`,
+              margin: "10px auto",
+            }}
+          />
+          <div className="generalItem">
+            <div className="typingContainer subTitle">Text preview</div>
+            <div className="switchContainer">
+              <span className="typingContainer thisText">
+                Show message preview text inside new message notifications
+              </span>
+              <FormControl component="fieldset">
+                <FormGroup aria-label="position" row>
+                  <FormControlLabel
+                    control={<Switch color="success" size="small" />}
+                    label="Off"
+                    labelPlacement="start"
+                  />
+                </FormGroup>
+              </FormControl>
+            </div>
+          </div>
+          <div className="generalItem">
+            <div className="typingContainer subTitle">Media Preview</div>
+            <div className="switchContainer">
+              <span className="typingContainer thisText">
+                Show media preview images inside new message notifications
+              </span>
+              <FormControl component="fieldset">
+                <FormGroup aria-label="position" row>
+                  <FormControlLabel
+                    control={<Switch color="success" size="small" />}
+                    label="Off"
+                    labelPlacement="start"
+                  />
+                </FormGroup>
+              </FormControl>
+            </div>
+          </div>
+          <Divider
+            sx={{
+              width: `${100}%`,
+              margin: "10px auto",
+            }}
+          />
+          <div className="generalItem">
+            <h4 className="generalItemTitle">Notification tones</h4>
+            <div className="typingContainer subTitle">Messages</div>
+            <div className="groupDropdown">
+              <Button
+                variant="outlined"
+                sx={{
+                  color: "var(--accent-color)",
+                  borderColor: "var(--accent-color)",
+                }}
+              >
+                <PlayArrowOutlinedIcon />
+              </Button>
+              <div className="dropDownContainer thisDropDown">
+                <MusicNoteOutlinedIcon
+                  sx={{
+                    width: 18,
+                    height: 18,
+                    marginLeft: 1,
+                    marginRight: 1,
+                    color: "var(--accent-color)",
+                  }}
+                />
+                <FormControl fullWidth>
+                  <Select
+                    id="demo-simple-select"
+                    value={messageTone}
+                    onChange={(e) => setMessageTone(e.target.value)}
+                    sx={{
+                      width: "100%",
+                      height: "35px",
+                      "& .MuiOutlinedInput-notchedOutline": {
+                        border: "none",
+                      },
+                    }}
+                  >
+                    <MenuItem id="demo-simple-select" value="Default">
+                      Default
+                    </MenuItem>
+                    <MenuItem id="demo-simple-select" value="Alert 1">
+                      Alert 1
+                    </MenuItem>
+                    <MenuItem id="demo-simple-select" value="Alert 2">
+                      ALert 2
+                    </MenuItem>
+                    <MenuItem id="demo-simple-select" value="Alert 3">
+                      Alert 3
+                    </MenuItem>
+                  </Select>
+                </FormControl>
+              </div>
+            </div>
+            <div className="typingContainer subTitle">Groups</div>
+            <div className="groupDropdown">
+              <Button
+                variant="outlined"
+                sx={{
+                  color: "var(--accent-color)",
+                  borderColor: "var(--accent-color)",
+                }}
+              >
+                <PlayArrowOutlinedIcon />
+              </Button>
+              <div className="dropDownContainer thisDropDown">
+                <MusicNoteOutlinedIcon
+                  sx={{
+                    width: 18,
+                    height: 18,
+                    marginLeft: 1,
+                    marginRight: 1,
+                    color: "var(--accent-color)",
+                  }}
+                />
+                <FormControl fullWidth>
+                  <Select
+                    id="demo-simple-select"
+                    value={groupTone}
+                    onChange={(e) => setGroupTone(e.target.value)}
+                    sx={{
+                      width: "100%",
+                      height: "35px",
+                      "& .MuiOutlinedInput-notchedOutline": {
+                        border: "none",
+                      },
+                    }}
+                  >
+                    <MenuItem id="demo-simple-select" value="Default">
+                      Default
+                    </MenuItem>
+                    <MenuItem id="demo-simple-select" value="Alert 1">
+                      Alert 1
+                    </MenuItem>
+                    <MenuItem id="demo-simple-select" value="Alert 2">
+                      ALert 2
+                    </MenuItem>
+                    <MenuItem id="demo-simple-select" value="Alert 3">
+                      Alert 3
+                    </MenuItem>
+                  </Select>
+                </FormControl>
+              </div>
             </div>
           </div>
         </div>
