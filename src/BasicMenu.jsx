@@ -28,7 +28,6 @@ import notificationLogo from "/Capture.svg";
 import Divider from "@mui/material/Divider";
 import PlayArrowOutlinedIcon from "@mui/icons-material/PlayArrowOutlined";
 import MusicNoteOutlinedIcon from "@mui/icons-material/MusicNoteOutlined";
-import { red } from "@mui/material/colors";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;

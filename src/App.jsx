@@ -12,6 +12,7 @@ import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
+import Dropdown from "./Dropdown";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -56,9 +57,10 @@ function App() {
               </IconButton>
             </Tooltip>
             <Tooltip title="Filter chats by" placement="top">
-              <IconButton>
+              <IconButton onClick={() => {}}>
                 <FilterListOutlinedIcon />
               </IconButton>
+              <Dropdown />
             </Tooltip>
           </ButtonGroup>
         </Box>
