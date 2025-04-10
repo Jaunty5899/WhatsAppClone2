@@ -57,9 +57,6 @@ function App() {
               </IconButton>
             </Tooltip>
             <Tooltip title="Filter chats by" placement="top">
-              <IconButton onClick={() => {}}>
-                <FilterListOutlinedIcon />
-              </IconButton>
               <Dropdown />
             </Tooltip>
           </ButtonGroup>
