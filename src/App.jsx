@@ -13,6 +13,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import Dropdown from "./Dropdown";
+import Typography from "@mui/material/Typography";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -116,7 +117,26 @@ function App() {
           <UserSlip />
         </Box>
       </Box>
-      <Box sx={{ p: 2, flexGrow: 1 }}></Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          p: 2,
+          flexGrow: 1,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Typography variant="h5" gutterBottom>
+          WhatsApp for Windows
+        </Typography>
+        <Typography variant="subtitle2" sx={{ fontWeight: 400, opacity: 0.5 }}>
+          Send and receive messages without keeping your phone online.
+        </Typography>
+        <Typography variant="subtitle2" sx={{ fontWeight: 400, opacity: 0.5 }}>
+          Use WhatsApp on upto 4 linked devices and 1 phone at the same time.
+        </Typography>
+      </Box>
     </Box>
   );
 }
