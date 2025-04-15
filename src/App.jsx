@@ -14,6 +14,7 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import Dropdown from "./Dropdown";
 import Typography from "@mui/material/Typography";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -125,6 +126,7 @@ function App() {
           flexGrow: 1,
           justifyContent: "center",
           alignItems: "center",
+          marginTop: 35,
         }}
       >
         <Typography variant="h5" gutterBottom>
@@ -135,6 +137,19 @@ function App() {
         </Typography>
         <Typography variant="subtitle2" sx={{ fontWeight: 400, opacity: 0.5 }}>
           Use WhatsApp on upto 4 linked devices and 1 phone at the same time.
+        </Typography>
+        <Typography
+          variant="subtitle2"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            fontWeight: 400,
+            opacity: 0.4,
+            marginTop: "auto",
+          }}
+        >
+          <LockOutlinedIcon />
+          End-to-end encrypted
         </Typography>
       </Box>
     </Box>
