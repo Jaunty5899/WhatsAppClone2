@@ -6,7 +6,6 @@ import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
-import FilterListOutlinedIcon from "@mui/icons-material/FilterListOutlined";
 import Tooltip from "@mui/material/Tooltip";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
@@ -15,6 +14,7 @@ import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import Dropdown from "./Dropdown";
 import Typography from "@mui/material/Typography";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import whatsappLogo from "/whatsapp.svg";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -126,9 +126,15 @@ function App() {
           flexGrow: 1,
           justifyContent: "center",
           alignItems: "center",
-          marginTop: 35,
+          marginTop: 30,
         }}
       >
+        <img
+          src={whatsappLogo}
+          width={70}
+          style={{ marginBottom: 10 }}
+          alt=""
+        />
         <Typography variant="h5" gutterBottom>
           WhatsApp for Windows
         </Typography>
