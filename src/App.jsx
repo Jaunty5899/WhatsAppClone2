@@ -114,15 +114,6 @@ function App() {
           }}
         >
           <UserSlip />
-          <UserSlip />
-          <UserSlip />
-          <UserSlip />
-          <UserSlip />
-          <UserSlip />
-          <UserSlip />
-          <UserSlip />
-          <UserSlip />
-          <UserSlip />
         </Box>
       </Box>
       <Box sx={{ p: 2, flexGrow: 1 }}></Box>
