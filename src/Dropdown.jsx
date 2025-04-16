@@ -3,7 +3,7 @@ import "./Dropdown.css";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
-
+import Tooltip from "@mui/material/Tooltip";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import MarkUnreadChatAltOutlinedIcon from "@mui/icons-material/MarkUnreadChatAltOutlined";
@@ -27,16 +27,18 @@ export default function Dropdown() {
 
   return (
     <>
-      <IconButton
-        className="thisDropdown"
-        id="basic-button"
-        aria-controls={open ? "basic-menu" : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? "true" : undefined}
-        onClick={handleClick}
-      >
-        <FilterListOutlinedIcon />
-      </IconButton>
+      <Tooltip title="Filter chats by" placement="top">
+        <IconButton
+          className="thisDropdown"
+          id="basic-button"
+          aria-controls={open ? "basic-menu" : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
+          onClick={handleClick}
+        >
+          <FilterListOutlinedIcon />
+        </IconButton>
+      </Tooltip>
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}

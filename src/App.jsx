@@ -58,9 +58,7 @@ function App() {
                 <CreateOutlinedIcon />
               </IconButton>
             </Tooltip>
-            <Tooltip title="Filter chats by" placement="top">
-              <Dropdown />
-            </Tooltip>
+            <Dropdown />
           </ButtonGroup>
         </Box>
         <TextField
