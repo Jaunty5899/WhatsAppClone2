@@ -28,6 +28,17 @@ import notificationLogo from "/Capture.svg";
 import Divider from "@mui/material/Divider";
 import PlayArrowOutlinedIcon from "@mui/icons-material/PlayArrowOutlined";
 import MusicNoteOutlinedIcon from "@mui/icons-material/MusicNoteOutlined";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import ColorLensOutlinedIcon from "@mui/icons-material/ColorLensOutlined";
+
+import { styled, alpha } from "@mui/material/styles";
+import Menu from "@mui/material/Menu";
+import EditIcon from "@mui/icons-material/Edit";
+import ArchiveIcon from "@mui/icons-material/Archive";
+import FileCopyIcon from "@mui/icons-material/FileCopy";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -62,6 +73,49 @@ function a11yProps(index) {
   };
 }
 
+const StyledMenu = styled((props) => (
+  <Menu
+    elevation={0}
+    anchorOrigin={{
+      vertical: "bottom",
+      horizontal: "center",
+    }}
+    transformOrigin={{
+      vertical: "top",
+      horizontal: "center",
+    }}
+    {...props}
+  />
+))(({ theme }) => ({
+  "& .MuiPaper-root": {
+    borderRadius: 6,
+    marginTop: theme.spacing(1),
+    minWidth: 180,
+    color: "rgb(55, 65, 81)",
+    boxShadow:
+      "rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px",
+    "& .MuiMenu-list": {
+      padding: "4px 0",
+    },
+    "& .MuiMenuItem-root": {
+      "& .MuiSvgIcon-root": {
+        fontSize: 18,
+        color: theme.palette.text.secondary,
+        marginRight: theme.spacing(1.5),
+      },
+      "&:active": {
+        backgroundColor: alpha(
+          theme.palette.primary.main,
+          theme.palette.action.selectedOpacity
+        ),
+      },
+    },
+    ...theme.applyStyles("dark", {
+      color: theme.palette.grey[300],
+    }),
+  },
+}));
+
 export default function BasicMenu({ menuState, stateChangeFunction }) {
   const [value, setValue] = useState(0);
   const [isOpen, setIsOpen] = useState(menuState.state);
@@ -70,6 +124,14 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
   const [bannerNotification, setBannerNotification] = useState("Always");
   const [messageTone, setMessageTone] = useState("Default");
   const [groupTone, setGroupTone] = useState("Default");
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const handleClickOutside = (event) => {
     if (divRef.current && !divRef.current.contains(event.target)) {
@@ -820,7 +882,53 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={4} id="general">
-        Item Six
+        <h3 className="title general">Personalisation</h3>
+        <div className="generalContainer">
+          <div className="generalItem">
+            <h4 className="generalItemTitle">Theme</h4>
+            <div className="dropDownContainer">
+              <Button
+                id="demo-customized-button"
+                aria-controls={open ? "demo-customized-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                variant="contained"
+                disableElevation
+                onClick={handleClick}
+                endIcon={<KeyboardArrowDownIcon />}
+              >
+                Options
+              </Button>
+              <StyledMenu
+                id="demo-customized-menu"
+                MenuListProps={{
+                  "aria-labelledby": "demo-customized-button",
+                }}
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={handleClose} disableRipple>
+                  <EditIcon />
+                  Edit
+                </MenuItem>
+                <MenuItem onClick={handleClose} disableRipple>
+                  <FileCopyIcon />
+                  Duplicate
+                </MenuItem>
+                <Divider sx={{ my: 0.5 }} />
+                <MenuItem onClick={handleClose} disableRipple>
+                  <ArchiveIcon />
+                  Archive
+                </MenuItem>
+                <MenuItem onClick={handleClose} disableRipple>
+                  <MoreHorizIcon />
+                  More
+                </MenuItem>
+              </StyledMenu>
+            </div>
+          </div>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={5} id="general">
         Item Seven
