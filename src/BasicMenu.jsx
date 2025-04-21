@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./BasicMenu.css";
+import ColorBox from "./ColorBox";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -31,6 +32,7 @@ import MusicNoteOutlinedIcon from "@mui/icons-material/MusicNoteOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import ColorLensOutlinedIcon from "@mui/icons-material/ColorLensOutlined";
+import CheckboxLabels from "./CheckboxLabels";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -73,6 +75,11 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
   const [bannerNotification, setBannerNotification] = useState("Always");
   const [messageTone, setMessageTone] = useState("Default");
   const [groupTone, setGroupTone] = useState("Default");
+  const [selectedColor, setSelectedColor] = useState("");
+
+  const setColor = (color) => {
+    setSelectedColor(color);
+  };
 
   const handleClickOutside = (event) => {
     if (divRef.current && !divRef.current.contains(event.target)) {
@@ -827,6 +834,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
         <div className="generalContainer">
           <div className="generalItem">
             <h4 className="generalItemTitle">Theme</h4>
+            <div className="typingContainer subTitle">App color theme</div>
             <div className="dropDownContainer">
               <FormControl fullWidth>
                 <Select
@@ -877,6 +885,37 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
                 </Select>
               </FormControl>
             </div>
+          </div>
+          <div className="generalItem">
+            <h4 className="generalItemTitle">Chat wallpaper</h4>
+            <div className="colorBoxes">
+              {[
+                "rgba(246, 246, 240)",
+                "rgba(192, 226, 212)",
+                "rgba(177, 228, 197)",
+                "rgba(170, 212, 242)",
+                "rgba(219, 223, 245)",
+                "rgba(244, 198, 203)",
+                "rgba(245, 114, 114)",
+                "rgba(251, 224, 179)",
+                "rgba(246, 241, 212)",
+                "rgba(217, 217, 217)",
+                "rgba(162, 226, 211)",
+                "rgba(198, 200, 244)",
+                "rgba(181, 242, 131)",
+                "rgba(234, 147, 216)",
+                "rgba(246, 166, 166, 1) 0%, rgba(246, 231, 143, 1) 25%, rgba(176, 236, 180, 1) 50%, rgba(156, 212, 246, 1) 75%, rgba(210, 166, 246, 1))",
+              ].map((bgcolor) => (
+                <ColorBox
+                  bgcolor={bgcolor}
+                  selected={bgcolor == selectedColor ? true : false}
+                  setColor={setColor}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="generalItem">
+            <CheckboxLabels />
           </div>
         </div>
       </TabPanel>
