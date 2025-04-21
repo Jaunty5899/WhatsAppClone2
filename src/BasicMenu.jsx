@@ -915,7 +915,44 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
             </div>
           </div>
           <div className="generalItem">
-            <CheckboxLabels />
+            <CheckboxLabels>WhatsApp doodle</CheckboxLabels>
+            <Button
+              variant="outlined"
+              sx={{
+                marginTop: 1,
+                padding: "2px 40px",
+                color: "black",
+                borderColor: "grey",
+              }}
+            >
+              Reset
+            </Button>
+          </div>
+          <div className="generalItem">
+            <h4 className="generalItemTitle">Text size</h4>
+            <div className="dropDownContainer">
+              <FormControl fullWidth>
+                <Select
+                  id="demo-simple-select"
+                  value={"100%"}
+                  // onChange={(e) => setLanguage(e.target.value)}
+                  sx={{
+                    width: "100%",
+                    height: "35px",
+                    "& .MuiOutlinedInput-notchedOutline": {
+                      border: "none",
+                    },
+                  }}
+                >
+                  <MenuItem id="demo-simple-select" value="100%">
+                    100%
+                  </MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+            <div className="typingContainer" style={{ marginTop: "10px" }}>
+              Use Ctrl +/- to increase or decrease your text size
+            </div>
           </div>
         </div>
       </TabPanel>
