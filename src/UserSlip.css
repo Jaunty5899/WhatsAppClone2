@@ -2,3 +2,10 @@
   font-size: small;
   opacity: 0.8;
 }
+.userSlip {
+  padding: 10px 10px;
+  border-radius: 5px;
+}
+.userSlip:hover {
+  background-color: rgba(128, 128, 128, 0.1);
+}

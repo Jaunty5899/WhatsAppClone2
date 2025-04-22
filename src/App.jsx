@@ -34,6 +34,7 @@ function App() {
           width: "350px",
           height: "100%",
           overflow: "hidden",
+          paddingRight: 0,
           boxShadow:
             "0px 2px 2px 0px rgba(0,0,0,0.14) , 0px 3px 1px -2px rgba(0,0,0,0.12) , 0px 1px 5px 0px rgba(0,0,0,0.2) ",
         }}
@@ -63,7 +64,7 @@ function App() {
         </Box>
         <TextField
           sx={{
-            width: "100%",
+            width: "95%",
             "& .MuiInput-underline:before": {
               borderBottomColor: "var(--accent-color)", // Change the underline color before focus
             },
@@ -106,13 +107,15 @@ function App() {
             scrollbarWidth: "thin",
             scrollbarColor: "#e0e0e0 transparent",
             height: "89%",
-            gap: 3.5,
+            gap: 0.5,
             paddingTop: 3,
-            paddingRight: 1,
+            // paddingRight: 0,
             paddingBottom: 3,
             marginTop: 1,
           }}
         >
+          <UserSlip />
+          <UserSlip />
           <UserSlip />
         </Box>
       </Box>

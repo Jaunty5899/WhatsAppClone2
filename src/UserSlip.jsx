@@ -4,7 +4,10 @@ import Avatar from "@mui/material/Avatar";
 
 export default function UserSlip({ color }) {
   return (
-    <Box sx={{ display: "flex", gap: 1.5, alignItems: "center" }}>
+    <Box
+      className="userSlip"
+      sx={{ display: "flex", gap: 1.5, alignItems: "center" }}
+    >
       <Avatar sx={{ width: 48, height: 48 }} />
       <Box sx={{ width: "100%" }}>
         <Box
