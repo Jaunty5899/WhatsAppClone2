@@ -935,7 +935,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
                 <Select
                   id="demo-simple-select"
                   value={"100%"}
-                  // onChange={(e) => setLanguage(e.target.value)}
+                  onChange={(e) => setLanguage(e.target.value)}
                   sx={{
                     width: "100%",
                     height: "35px",
@@ -957,16 +957,39 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={5} id="general">
-        Item Seven
+        <h3 className="title general">Storage</h3>
+        <div className="generalContainer">
+          <div className="generalItem">
+            <h4 className="generalItemTitle">Automatic downloads</h4>
+            <div className="typingContainer" style={{ opacity: 0.7 }}>
+              Choose which media will be automatically downloaded from the
+              messages you receive
+            </div>
+            <div style={{ marginTop: 10, marginLeft: 5 }}>
+              <CheckboxLabels>Photos</CheckboxLabels>
+              <CheckboxLabels>Audio</CheckboxLabels>
+              <CheckboxLabels>Videos</CheckboxLabels>
+              <CheckboxLabels>Documents</CheckboxLabels>
+            </div>
+          </div>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={6} id="general">
-        Item Eight
+        <h3 className="title general">Shortcuts</h3>
+        <div className="generalContainer">
+          <div className="generalItem"></div>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={7} id="general">
-        Item Nine
+        <h3 className="title general">Help</h3>
+        <div className="generalContainer">
+          <div className="generalItem"></div>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={9} id="general">
-        Item Ten
+        <div className="generalContainer">
+          <div className="generalItem"></div>
+        </div>
       </TabPanel>
     </Box>
   );

@@ -10,6 +10,7 @@ export default function CheckboxLabels({ children }) {
           <Checkbox
             defaultChecked
             sx={{
+              padding: 0.5,
               color: "var(--accent-color)",
               "&.Mui-checked": {
                 color: "var(--accent-color)",
