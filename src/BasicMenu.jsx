@@ -33,6 +33,7 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import ColorLensOutlinedIcon from "@mui/icons-material/ColorLensOutlined";
 import CheckboxLabels from "./CheckboxLabels";
+import { InvertColors } from "@mui/icons-material";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -1026,8 +1027,45 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
         </div>
       </TabPanel>
       <TabPanel value={value} index={9} id="general">
-        <div className="generalContainer">
-          <div className="generalItem"></div>
+        <div className="generalContainer" style={{ marginTop: 0 }}>
+          <div className="generalItem">
+            <Avatar
+              sx={{
+                width: 100,
+                height: 100,
+                marginBottom: 2,
+              }}
+            />
+          </div>
+          <div className="generalItem">
+            <h3 className="title general">Jaunty</h3>
+          </div>
+          <div className="generalItem">
+            <div className="typingContainer subTitle">About</div>
+            <div>Sleeping</div>
+          </div>
+          <div className="generalItem">
+            <div className="typingContainer subTitle">Phone number</div>
+            <div>+91 XXXXXXXXXX</div>
+          </div>
+          <div className="generalItem">
+            <Button
+              variant="outlined"
+              sx={{
+                marginTop: 4,
+                color: "red",
+                borderColor: "red",
+              }}
+            >
+              Logout
+            </Button>
+            <div
+              className="typingContainer"
+              style={{ opacity: 0.7, marginTop: 4 }}
+            >
+              Chat history on this computer will be cleared when you log out.
+            </div>
+          </div>
         </div>
       </TabPanel>
     </Box>
