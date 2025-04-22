@@ -983,7 +983,46 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
       <TabPanel value={value} index={7} id="general">
         <h3 className="title general">Help</h3>
         <div className="generalContainer">
-          <div className="generalItem"></div>
+          <div className="generalItem">
+            <h4 className="generalItemTitle">WhatsApp for Windows</h4>
+            <div className="typingContainer subTitle">Version X.XXXX.X.X</div>
+          </div>
+          <div className="generalItem" style={{ marginTop: 40 }}>
+            <h4 className="generalItemTitle">Contact us</h4>
+            <div className="typingContainer subTitle">
+              We'd like to know your thoughts about this app.
+            </div>
+            <a href="#" className="link">
+              Contact us
+            </a>
+            <a href="#" className="link">
+              Rate the app
+            </a>
+          </div>
+          <div className="generalItem">
+            <a href="#" className="link">
+              Help Center
+            </a>
+            <a href="#" className="link">
+              Licenses
+            </a>
+            <a href="#" className="link">
+              Terms and Privacy Policy
+            </a>
+          </div>
+          <div className="generalItem">
+            <div
+              className="typingContainer"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 3,
+                marginTop: 40,
+              }}
+            >
+              2025 <span style={{ fontSize: 20 }}>©</span> WhatsApp Inc.
+            </div>
+          </div>
         </div>
       </TabPanel>
       <TabPanel value={value} index={9} id="general">
