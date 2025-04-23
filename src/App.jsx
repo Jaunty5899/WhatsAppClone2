@@ -46,6 +46,7 @@ function App() {
             alignItems: "center",
             justifyContent: "space-between",
             m: 0,
+            marginRight: 1,
           }}
         >
           <h2 className="title">Chats</h2>

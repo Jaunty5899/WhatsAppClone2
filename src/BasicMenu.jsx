@@ -978,7 +978,9 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
       <TabPanel value={value} index={6} id="general">
         <h3 className="title general">Shortcuts</h3>
         <div className="generalContainer">
-          <div className="generalItem"></div>
+          <div className="generalItem">
+            <h4 className="generalItemTitle">Keyboard shortcuts</h4>
+          </div>
         </div>
       </TabPanel>
       <TabPanel value={value} index={7} id="general">
