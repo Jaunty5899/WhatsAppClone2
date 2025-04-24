@@ -33,7 +33,7 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import ColorLensOutlinedIcon from "@mui/icons-material/ColorLensOutlined";
 import CheckboxLabels from "./CheckboxLabels";
-import { InvertColors } from "@mui/icons-material";
+import Shortcut from "./Shortcut";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -980,6 +980,9 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
         <div className="generalContainer">
           <div className="generalItem">
             <h4 className="generalItemTitle">Keyboard shortcuts</h4>
+            <div className="typingContainer subTitle">
+              <Shortcut title={Shortcut.title} keys={Shortcut.keys} />
+            </div>
           </div>
         </div>
       </TabPanel>
@@ -1023,7 +1026,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
                 marginTop: 40,
               }}
             >
-              2025 <span style={{ fontSize: 20 }}>©</span> WhatsApp Inc.
+              2025<span style={{ fontSize: 20 }}>©</span> WhatsApp Inc.
             </div>
           </div>
         </div>
