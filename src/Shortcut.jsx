@@ -8,14 +8,14 @@ export default function Shortcut({ title, keys }) {
       }}
     >
       <span>{title}</span>
-      <span style={{ display: "flex", gap: 8 }}>
+      <span style={{ display: "flex", gap: 10 }}>
         {keys.map((segment) => {
           return (
             <span
               style={{
                 border: "1px solid grey",
                 borderRadius: 4,
-                padding: "6px 10px",
+                padding: "4px 8px",
               }}
             >
               {segment}

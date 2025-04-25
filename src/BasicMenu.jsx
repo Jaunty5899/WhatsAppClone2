@@ -78,7 +78,30 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
   const [groupTone, setGroupTone] = useState("Default");
   const [selectedColor, setSelectedColor] = useState("");
 
-  const Shortkut = [{ title: "world", keys: ["Ctrl", "Alt", "Del"] }];
+  const Shortkut = [
+    { title: "New chat", keys: ["Ctrl", "N"] },
+    { title: "Close chat", keys: ["Ctrl", "W"] },
+    { title: "Close chat", keys: ["Ctrl", "F4"] },
+    { title: "Close Application", keys: ["Alt", "F4"] },
+    { title: "New group", keys: ["Ctrl", "Shift", "N"] },
+    { title: "Search", keys: ["Ctrl", "F"] },
+    { title: "Search in chat", keys: ["Ctrl", "Shift", "F"] },
+    { title: "Profile", keys: ["Ctrl", "P"] },
+    { title: "Mute chat", keys: ["Ctrl", "Shift", "M"] },
+    { title: "Toggle read", keys: ["Ctrl", "Shift", "U"] },
+    { title: "Emoji panel", keys: ["Ctrl", "Shift", "E"] },
+    { title: "GIF panel", keys: ["Ctrl", "Shift", "G"] },
+    { title: "Sticker panel", keys: ["Ctrl", "Shift", "S"] },
+    { title: "Previous chat", keys: ["Ctrl", "Shift", "["] },
+    { title: "Next chat", keys: ["Ctrl", "Shift", "]"] },
+    { title: "Previous chat", keys: ["Ctrl", "Shift", "Tab"] },
+    { title: "Next chat", keys: ["Ctrl", "Tab"] },
+    { title: "Open chat", keys: ["Ctrl", "1..9"] },
+    { title: "Edit last message", keys: ["Ctrl", "↑"] },
+    { title: "Decrease text size", keys: ["Ctrl", "-"] },
+    { title: "Increase text size", keys: ["Ctrl", "+"] },
+    { title: "Reset text size", keys: ["Ctrl", "0"] },
+  ];
 
   const setColor = (color) => {
     setSelectedColor(color);
@@ -982,8 +1005,13 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
         <div className="generalContainer">
           <div className="generalItem">
             <h4 className="generalItemTitle">Keyboard shortcuts</h4>
-            <div className="typingContainer subTitle">
-              <Shortcut title={Shortkut[0].title} keys={Shortkut[0].keys} />
+            <div
+              className="typingContainer subTitle"
+              style={{ display: "flex", flexDirection: "column", gap: 10 }}
+            >
+              {Shortkut.map((e) => {
+                return <Shortcut title={e.title} keys={e.keys} />;
+              })}
             </div>
           </div>
         </div>
