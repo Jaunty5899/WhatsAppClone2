@@ -78,6 +78,8 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
   const [groupTone, setGroupTone] = useState("Default");
   const [selectedColor, setSelectedColor] = useState("");
 
+  const Shortkut = [{ title: "world", keys: ["Ctrl", "Alt", "Del"] }];
+
   const setColor = (color) => {
     setSelectedColor(color);
   };
@@ -981,7 +983,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
           <div className="generalItem">
             <h4 className="generalItemTitle">Keyboard shortcuts</h4>
             <div className="typingContainer subTitle">
-              <Shortcut title={Shortcut.title} keys={Shortcut.keys} />
+              <Shortcut title={Shortkut[0].title} keys={Shortkut[0].keys} />
             </div>
           </div>
         </div>
