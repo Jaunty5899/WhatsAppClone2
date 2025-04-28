@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import "./ChatBox.css";
 
 export default function ChatBox() {
   return (
@@ -20,7 +21,12 @@ export default function ChatBox() {
         marginTop: 30,
       }}
     >
-      <AppBar position="absolute" sx={{ top: "-54.5%" }}>
+      <AppBar
+        className="shadowDown"
+        position="absolute"
+        color="white"
+        sx={{ top: "-54.5%" }}
+      >
         <Toolbar>
           <IconButton
             size="large"
@@ -38,7 +44,12 @@ export default function ChatBox() {
         </Toolbar>
       </AppBar>
       <Box>hello world!</Box>
-      <AppBar position="absolute" sx={{ top: "auto", bottom: 0 }}>
+      <AppBar
+        className="shadowUp"
+        position="absolute"
+        color="white"
+        sx={{ top: "auto", bottom: 0 }}
+      >
         <Toolbar>
           <IconButton
             size="large"
