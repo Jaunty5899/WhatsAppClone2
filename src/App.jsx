@@ -15,9 +15,11 @@ import Dropdown from "./Dropdown";
 import Typography from "@mui/material/Typography";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import whatsappLogo from "/whatsapp.svg";
+import ChatBox from "./ChatBox";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
+  const [isClicked, setClicked] = useState(true);
   return (
     <Box
       sx={{
@@ -120,46 +122,56 @@ function App() {
           <UserSlip />
         </Box>
       </Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          p: 2,
-          flexGrow: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: 30,
-        }}
-      >
-        <img
-          src={whatsappLogo}
-          width={70}
-          style={{ marginBottom: 10 }}
-          alt=""
-        />
-        <Typography variant="h5" gutterBottom>
-          WhatsApp for Windows
-        </Typography>
-        <Typography variant="subtitle2" sx={{ fontWeight: 400, opacity: 0.5 }}>
-          Send and receive messages without keeping your phone online.
-        </Typography>
-        <Typography variant="subtitle2" sx={{ fontWeight: 400, opacity: 0.5 }}>
-          Use WhatsApp on upto 4 linked devices and 1 phone at the same time.
-        </Typography>
-        <Typography
-          variant="subtitle2"
+      {!isClicked ? (
+        <Box
           sx={{
             display: "flex",
+            flexDirection: "column",
+            p: 2,
+            flexGrow: 1,
+            justifyContent: "center",
             alignItems: "center",
-            fontWeight: 400,
-            opacity: 0.4,
-            marginTop: "auto",
+            marginTop: 30,
           }}
         >
-          <LockOutlinedIcon />
-          End-to-end encrypted
-        </Typography>
-      </Box>
+          <img
+            src={whatsappLogo}
+            width={70}
+            style={{ marginBottom: 10 }}
+            alt=""
+          />
+          <Typography variant="h5" gutterBottom>
+            WhatsApp for Windows
+          </Typography>
+          <Typography
+            variant="subtitle2"
+            sx={{ fontWeight: 400, opacity: 0.5 }}
+          >
+            Send and receive messages without keeping your phone online.
+          </Typography>
+          <Typography
+            variant="subtitle2"
+            sx={{ fontWeight: 400, opacity: 0.5 }}
+          >
+            Use WhatsApp on upto 4 linked devices and 1 phone at the same time.
+          </Typography>
+          <Typography
+            variant="subtitle2"
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              fontWeight: 400,
+              opacity: 0.4,
+              marginTop: "auto",
+            }}
+          >
+            <LockOutlinedIcon />
+            End-to-end encrypted
+          </Typography>
+        </Box>
+      ) : (
+        <ChatBox />
+      )}
     </Box>
   );
 }
