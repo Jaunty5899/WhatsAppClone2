@@ -1,3 +1,4 @@
+import "./ChatBox.css";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -5,7 +6,11 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import "./ChatBox.css";
+import Avatar from "@mui/material/Avatar";
+import Stack from "@mui/material/Stack";
+import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
+import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
 export default function ChatBox() {
   return (
@@ -21,29 +26,58 @@ export default function ChatBox() {
         marginTop: 30,
       }}
     >
+      {/* HEADER */}
       <AppBar
         className="shadowDown"
         position="absolute"
-        color="white"
+        color="red"
         sx={{ top: "-54.5%" }}
       >
         <Toolbar>
-          <IconButton
+          <Button
             size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
+            variant="text"
+            sx={{
+              color: "black",
+              m: -2.5,
+              textTransform: "capitalize",
+              paddingLeft: 2,
+              paddingRight: 2,
+            }}
+            startIcon={<Avatar />}
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
+            Username
+          </Button>
+          <Stack
+            direction="row"
+            spacing={0}
+            border={"1px solid rgba(0, 0, 0, 0.06)"}
+          >
+            <IconButton
+              aria-label="voiceCall"
+              sx={{
+                border: "inherit",
+                borderRadius: 0,
+                padding: "7px 10px 7px 10px",
+              }}
+            >
+              <CallOutlinedIcon />
+            </IconButton>
+            <IconButton
+              aria-label="videoCall"
+              sx={{
+                border: "inherit",
+                borderRadius: 0,
+                padding: "7px 10px 7px 10px",
+              }}
+            >
+              <VideocamOutlinedIcon />
+            </IconButton>
+          </Stack>
         </Toolbar>
       </AppBar>
       <Box>hello world!</Box>
+      {/* FOOTER */}
       <AppBar
         className="shadowUp"
         position="absolute"
