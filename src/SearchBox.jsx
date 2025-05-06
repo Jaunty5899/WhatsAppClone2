@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import IcoButton from "./IcoButton";
@@ -7,11 +8,12 @@ import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
 export default function SearchBox() {
+  const [chatSearchInput, setChatSearchInput] = useState();
   return (
     <Box
       sx={{
         boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
-        width: "59%",
+        width: "656px",
         padding: "8px 8px",
         position: "absolute",
         bottom: -65,
@@ -32,9 +34,9 @@ export default function SearchBox() {
           },
         }}
         id="standard-basic"
-        placeholder="Search or start a new chat"
-        // value={inputValue}
-        // onChange={(event) => setInputValue(event.target.value)}
+        placeholder="Search within chat"
+        value={chatSearchInput}
+        onChange={(event) => setChatSearchInput(event.target.value)}
         variant="standard"
       />
       <IcoButton>

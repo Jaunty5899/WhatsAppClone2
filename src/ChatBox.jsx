@@ -70,6 +70,7 @@ export default function ChatBox() {
         </Toolbar>
         <SearchBox />
       </AppBar>
+      {/* MID SECTION */}
       <Box>hello world!</Box>
       {/* FOOTER */}
       <AppBar
