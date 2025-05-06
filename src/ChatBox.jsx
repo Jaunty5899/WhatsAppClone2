@@ -33,7 +33,7 @@ export default function ChatBox() {
         color="red"
         sx={{ top: "-54.5%" }}
       >
-        <Toolbar>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <Button
             size="large"
             variant="text"
@@ -48,32 +48,45 @@ export default function ChatBox() {
           >
             Username
           </Button>
-          <Stack
-            direction="row"
-            spacing={0}
-            border={"1px solid rgba(0, 0, 0, 0.06)"}
-          >
+          <Box sx={{ display: "flex" }}>
+            <Stack
+              direction="row"
+              spacing={0}
+              border={"1px solid rgba(0, 0, 0, 0.06)"}
+            >
+              <IconButton
+                aria-label="voiceCall"
+                sx={{
+                  border: "inherit",
+                  borderRadius: 0,
+                  padding: "7px 10px 7px 10px",
+                }}
+              >
+                <CallOutlinedIcon />
+              </IconButton>
+              <IconButton
+                aria-label="videoCall"
+                sx={{
+                  border: "inherit",
+                  borderRadius: 0,
+                  padding: "7px 10px 7px 10px",
+                }}
+              >
+                <VideocamOutlinedIcon />
+              </IconButton>
+            </Stack>
             <IconButton
-              aria-label="voiceCall"
+              aria-label="Search"
               sx={{
+                marginLeft: 0.5,
                 border: "inherit",
                 borderRadius: 0,
                 padding: "7px 10px 7px 10px",
               }}
             >
-              <CallOutlinedIcon />
+              <SearchOutlinedIcon />
             </IconButton>
-            <IconButton
-              aria-label="videoCall"
-              sx={{
-                border: "inherit",
-                borderRadius: 0,
-                padding: "7px 10px 7px 10px",
-              }}
-            >
-              <VideocamOutlinedIcon />
-            </IconButton>
-          </Stack>
+          </Box>
         </Toolbar>
       </AppBar>
       <Box>hello world!</Box>
