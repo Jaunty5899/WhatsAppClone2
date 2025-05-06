@@ -11,6 +11,7 @@ import Stack from "@mui/material/Stack";
 import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
 import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import SearchBox from "./SearchBox";
 
 export default function ChatBox() {
   return (
@@ -88,6 +89,7 @@ export default function ChatBox() {
             </IconButton>
           </Box>
         </Toolbar>
+        <SearchBox />
       </AppBar>
       <Box>hello world!</Box>
       {/* FOOTER */}

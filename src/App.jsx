@@ -68,8 +68,12 @@ function App() {
         <TextField
           sx={{
             width: "95%",
+            boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
             "& .MuiInput-underline:before": {
-              borderBottomColor: "var(--accent-color)", // Change the underline color before focus
+              borderBottomColor: "transparent", // Change the underline color before focus
+            },
+            "& .MuiInput-underline:hover:before": {
+              borderBottomColor: "transparent", // Remove underline on hover
             },
             "& .MuiInput-underline:after": {
               borderBottomColor: "var(--accent-color)", // Change the underline color after focus
