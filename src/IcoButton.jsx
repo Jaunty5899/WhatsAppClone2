@@ -1,6 +1,6 @@
 import IconButton from "@mui/material/IconButton";
 
-export default function IcoButton({ Children }) {
+export default function IcoButton({ children }) {
   return (
     <IconButton
       aria-label="Search"
@@ -9,10 +9,9 @@ export default function IcoButton({ Children }) {
         border: "inherit",
         borderRadius: 0,
         padding: "7px 10px 7px 10px",
-        backgroundColor: "red",
       }}
     >
-      {Children}
+      {children}
     </IconButton>
   );
 }

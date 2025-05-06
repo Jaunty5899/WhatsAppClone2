@@ -3,13 +3,15 @@ import TextField from "@mui/material/TextField";
 import IcoButton from "./IcoButton";
 import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutlined";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
+import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
 export default function SearchBox() {
   return (
     <Box
       sx={{
         boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
-        width: "45%",
+        width: "59%",
         padding: "8px 8px",
         position: "absolute",
         bottom: -65,
@@ -40,6 +42,12 @@ export default function SearchBox() {
       </IcoButton>
       <IcoButton>
         <KeyboardArrowDownOutlinedIcon />
+      </IcoButton>
+      <IcoButton>
+        <CalendarMonthOutlinedIcon />
+      </IcoButton>
+      <IcoButton>
+        <CloseOutlinedIcon />
       </IcoButton>
     </Box>
   );

@@ -12,6 +12,7 @@ import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
 import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import SearchBox from "./SearchBox";
+import IcoButton from "./IcoButton";
 
 export default function ChatBox() {
   return (
@@ -55,38 +56,16 @@ export default function ChatBox() {
               spacing={0}
               border={"1px solid rgba(0, 0, 0, 0.06)"}
             >
-              <IconButton
-                aria-label="voiceCall"
-                sx={{
-                  border: "inherit",
-                  borderRadius: 0,
-                  padding: "7px 10px 7px 10px",
-                }}
-              >
+              <IcoButton>
                 <CallOutlinedIcon />
-              </IconButton>
-              <IconButton
-                aria-label="videoCall"
-                sx={{
-                  border: "inherit",
-                  borderRadius: 0,
-                  padding: "7px 10px 7px 10px",
-                }}
-              >
+              </IcoButton>
+              <IcoButton>
                 <VideocamOutlinedIcon />
-              </IconButton>
+              </IcoButton>
             </Stack>
-            <IconButton
-              aria-label="Search"
-              sx={{
-                marginLeft: 0.5,
-                border: "inherit",
-                borderRadius: 0,
-                padding: "7px 10px 7px 10px",
-              }}
-            >
+            <IcoButton>
               <SearchOutlinedIcon />
-            </IconButton>
+            </IcoButton>
           </Box>
         </Toolbar>
         <SearchBox />
