@@ -39,8 +39,8 @@ export default function ChatBox() {
           <Button
             size="large"
             variant="text"
+            color="default"
             sx={{
-              color: "black",
               m: -2.5,
               textTransform: "capitalize",
               paddingLeft: 2,
@@ -53,7 +53,7 @@ export default function ChatBox() {
           <Box sx={{ display: "flex" }}>
             <Stack
               direction="row"
-              spacing={0}
+              spacing={0.001}
               border={"1px solid rgba(0, 0, 0, 0.06)"}
             >
               <IcoButton>
