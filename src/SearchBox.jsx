@@ -12,12 +12,14 @@ export default function SearchBox() {
   return (
     <Box
       sx={{
-        boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
+        boxShadow: "rgba(55, 54, 54, 0.2) 0px 2px 8px 0px",
         width: "656px",
         padding: "8px 8px",
         position: "absolute",
         bottom: -65,
         right: 10,
+        display: "flex",
+        alignItems: "center",
       }}
     >
       <TextField

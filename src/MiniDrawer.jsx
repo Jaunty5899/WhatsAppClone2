@@ -106,7 +106,8 @@ const Drawer = styled(MuiDrawer, {
   ],
 }));
 
-export default function MiniDrawer() {
+export default function MiniDrawer({ changeTheme }) {
+  console.log(`MiniDrawer console log:${changeTheme}`);
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const [menuState, setMenuState] = useState(false);
@@ -305,6 +306,7 @@ export default function MiniDrawer() {
         </List>
       </Drawer>
       <BasicMenu
+        changeTheme={changeTheme}
         menuState={menuState}
         stateChangeFunction={stateChangeFunction}
       />

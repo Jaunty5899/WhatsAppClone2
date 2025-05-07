@@ -19,15 +19,22 @@ import ChatBox from "./ChatBox";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
-  },
-});
-
 function App() {
   const [inputValue, setInputValue] = useState("");
   const [isClicked, setClicked] = useState(true);
+  const [colorMode, setColorMode] = useState("light");
+
+  function changeTheme(selectedColorMode = "sample text") {
+    setColorMode(selectedColorMode);
+    console.log(selectedColorMode);
+  }
+
+  const darkTheme = createTheme({
+    palette: {
+      mode: `${"dark" || colorMode}`,
+    },
+  });
+
   return (
     <ThemeProvider theme={darkTheme}>
       <Box
@@ -37,7 +44,7 @@ function App() {
           height: "91.6vh",
         }}
       >
-        <MiniDrawer />
+        <MiniDrawer changeTheme={changeTheme} />
         <Box
           sx={{
             p: 2,
@@ -77,7 +84,7 @@ function App() {
           <TextField
             sx={{
               width: "95%",
-              boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+              boxShadow: "rgba(55, 54, 54, 0.2) 0px 2px 8px 0px",
               "& .MuiInput-underline:before": {
                 borderBottomColor: "transparent", // Change the underline color before focus
               },
@@ -96,24 +103,21 @@ function App() {
             slotProps={{
               input: {
                 startAdornment: (
-                  <InputAdornment position="start">
-                    <SearchOutlinedIcon
-                      fontSize="small"
-                      sx={{ marginLeft: 1 }}
-                    />
+                  <InputAdornment position="start" sx={{ marginLeft: 1 }}>
+                    <SearchOutlinedIcon fontSize="small" />
                   </InputAdornment>
                 ),
                 endAdornment: (
-                  <InputAdornment position="end">
+                  <InputAdornment position="end" sx={{ marginRight: 1.5 }}>
                     <IconButton
                       onClick={() => setInputValue("")}
                       edge="end"
-                      style={{ visibility: inputValue ? "visible" : "hidden" }} // Hide button if input is empty
+                      style={{
+                        visibility: inputValue ? "visible" : "hidden",
+                        borderRadius: 0,
+                      }} // Hide button if input is empty
                     >
-                      <CloseOutlinedIcon
-                        fontSize="small"
-                        sx={{ marginRight: 1 }}
-                      />
+                      <CloseOutlinedIcon fontSize="small" />
                     </IconButton>
                   </InputAdornment>
                 ),

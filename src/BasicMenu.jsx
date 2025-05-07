@@ -68,7 +68,12 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicMenu({ menuState, stateChangeFunction }) {
+export default function BasicMenu({
+  changeTheme,
+  menuState,
+  stateChangeFunction,
+}) {
+  console.log(`basic menu console log: ${changeTheme}`);
   const [value, setValue] = useState(0);
   const [isOpen, setIsOpen] = useState(menuState.state);
   const divRef = useRef(null);
@@ -866,7 +871,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
                 <Select
                   id="demo-simple-select"
                   value={language}
-                  onChange={(e) => setLanguage(e.target.value)}
+                  onChange={(e) => changeTheme(e.target.value)}
                   sx={{
                     width: "100%",
                     height: "35px",
@@ -886,7 +891,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
                     />
                     System Default
                   </MenuItem>
-                  <MenuItem id="demo-simple-select" value="Light">
+                  <MenuItem id="demo-simple-select" value="light">
                     <LightModeOutlinedIcon
                       sx={{
                         width: 18,
@@ -897,7 +902,7 @@ export default function BasicMenu({ menuState, stateChangeFunction }) {
                     />
                     Light
                   </MenuItem>
-                  <MenuItem id="demo-simple-select" value="Dark">
+                  <MenuItem id="demo-simple-select" value="dark">
                     <DarkModeOutlinedIcon
                       sx={{
                         width: 18,
