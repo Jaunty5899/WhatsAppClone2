@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState } from "react";
-import "./BasicMenu.css";
 import ColorBox from "./ColorBox";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";

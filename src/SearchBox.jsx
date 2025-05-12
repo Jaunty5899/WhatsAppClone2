@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./SearchBox.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import IcoButton from "./IcoButton";
@@ -7,7 +6,6 @@ import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutl
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
-import { Opacity } from "@mui/icons-material";
 
 export default function SearchBox({ openSearch }) {
   const [chatSearchInput, setChatSearchInput] = useState();
@@ -22,8 +20,8 @@ export default function SearchBox({ openSearch }) {
         right: 10,
         display: "flex",
         alignItems: "center",
-        clipPath: `circle(${openSearch ? 150 : 0}% at 0 100%)`,
-        transition: "clip-path 5s",
+        clipPath: `circle(${openSearch ? 150 : 0}% at 100% 50%)`,
+        transition: "clip-path 0.25s ease-in-out",
       }}
     >
       <TextField
