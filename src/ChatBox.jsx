@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./ChatBox.css";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -15,6 +16,12 @@ import SearchBox from "./SearchBox";
 import IcoButton from "./IcoButton";
 
 export default function ChatBox() {
+  const [openSearch, setOpenSearch] = useState(false);
+
+  const toggleSearch = () => {
+    setOpenSearch(openSearch ? false : true);
+  };
+
   return (
     <Box
       position="relative"
@@ -63,12 +70,12 @@ export default function ChatBox() {
                 <VideocamOutlinedIcon />
               </IcoButton>
             </Stack>
-            <IcoButton>
+            <IcoButton toggleSearch={toggleSearch}>
               <SearchOutlinedIcon />
             </IcoButton>
           </Box>
         </Toolbar>
-        <SearchBox />
+        <SearchBox openSearch={openSearch} />
       </AppBar>
       {/* MID SECTION */}
       <Box>hello world!</Box>
