@@ -44,13 +44,20 @@ export default function ChatBox() {
         color="red"
         sx={{ top: "-54.5%" }}
       >
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Toolbar
+          disableGutters={true}
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            paddingLeft: 1,
+            paddingRight: 1,
+          }}
+        >
           <Button
             size="large"
             variant="text"
             color="default"
             sx={{
-              m: -2.5,
               textTransform: "capitalize",
               paddingLeft: 2,
               paddingRight: 2,
@@ -86,9 +93,9 @@ export default function ChatBox() {
         className="shadowUp"
         position="absolute"
         color="white"
-        sx={{ top: "auto", bottom: 0 }}
+        sx={{ top: "auto", bottom: 0, paddingLeft: 1, paddingRight: 1 }}
       >
-        <Toolbar>
+        <Toolbar disableGutters={true}>
           <IcoButton>
             <SentimentSatisfiedAltIcon />
           </IcoButton>
