@@ -3,20 +3,22 @@ import "./ChatBox.css";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
+import TextField from "@mui/material/TextField";
 import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
 import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
+import AttachFileIcon from "@mui/icons-material/AttachFile";
+import MicNoneIcon from "@mui/icons-material/MicNone";
 import SearchBox from "./SearchBox";
 import IcoButton from "./IcoButton";
 
 export default function ChatBox() {
   const [openSearch, setOpenSearch] = useState(false);
+  const [message, setMessage] = useState("");
 
   const toggleSearch = () => {
     setOpenSearch(openSearch ? false : true);
@@ -87,19 +89,40 @@ export default function ChatBox() {
         sx={{ top: "auto", bottom: 0 }}
       >
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
+          <IcoButton>
+            <SentimentSatisfiedAltIcon />
+          </IcoButton>
+          <IcoButton>
+            <AttachFileIcon />
+          </IcoButton>
+          <TextField
+            multiline
+            maxRows={3}
+            sx={{
+              width: "100%",
+              marginLeft: "4px",
+              "& .MuiInput-underline:before": {
+                borderBottomColor: "transparent", // Change the underline color before focus
+              },
+              "& .MuiInput-underline:hover:before": {
+                borderBottomColor: "transparent", // Remove underline on hover
+              },
+              "& .MuiInput-underline:after": {
+                borderBottomColor: "transparent", // Change the underline color after focus
+              },
+              "& textarea": {
+                scrollbarWidth: "thin",
+              },
+            }}
+            id="standard-basic"
+            placeholder="Type a message"
+            value={message}
+            onChange={(event) => setMessage(event.target.value)}
+            variant="standard"
+          />
+          <IcoButton>
+            <MicNoneIcon />
+          </IcoButton>
         </Toolbar>
       </AppBar>
     </Box>
