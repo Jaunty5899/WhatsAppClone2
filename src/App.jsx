@@ -141,8 +141,6 @@ function App() {
             }}
           >
             <UserSlip />
-            <UserSlip />
-            <UserSlip />
           </Box>
         </Box>
         {!isClicked ? (

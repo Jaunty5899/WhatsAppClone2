@@ -1,4 +1,5 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
+import "./BasicMenu.css";
 import ColorBox from "./ColorBox";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
@@ -141,7 +142,7 @@ export default function BasicMenu({
       sx={{
         bgcolor: "background.paper",
         display: "flex",
-        width: 500,
+        width: 530,
         height: 500,
         position: "absolute",
         bottom: "1%",
@@ -161,6 +162,7 @@ export default function BasicMenu({
         onChange={handleChange}
         aria-label="Vertical tabs example"
         sx={{
+          width: 200,
           borderRight: 1,
           borderColor: "divider",
           "& .MuiTabs-indicator": {

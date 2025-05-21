@@ -7,7 +7,7 @@ import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDown
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
-export default function SearchBox({ openSearch }) {
+export default function SearchBox({ openSearch, closeSearch }) {
   const [chatSearchInput, setChatSearchInput] = useState();
   return (
     <Box
@@ -52,7 +52,7 @@ export default function SearchBox({ openSearch }) {
       <IcoButton>
         <CalendarMonthOutlinedIcon />
       </IcoButton>
-      <IcoButton>
+      <IcoButton toggleSearch={closeSearch}>
         <CloseOutlinedIcon />
       </IcoButton>
     </Box>

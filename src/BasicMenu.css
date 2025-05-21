@@ -1,0 +1,88 @@
+#basicMenu {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+#general {
+  width: 320px;
+  height: 480px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
+.generalContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+.switchContainer {
+  display: flex;
+  width: 270px;
+  justify-content: space-between;
+  align-items: center;
+}
+.generalItemTitle {
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: 400;
+}
+.typingContainer,
+#demo-simple-select {
+  font-size: 13px;
+}
+.thisText {
+  max-width: 200px;
+}
+h4 {
+  margin-top: 0;
+}
+.subTitle {
+  opacity: 0.8;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.description {
+  font-size: 11px;
+  opacity: 0.8;
+}
+.thisOne {
+  gap: 0px;
+}
+.iconWithText {
+  display: flex;
+}
+.link {
+  color: var(--accent-color);
+}
+.dropDownContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 192px;
+  margin-top: 5px;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+}
+.generalItem img {
+  display: flex;
+  position: relative;
+  right: 10px;
+}
+.groupDropdown {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  gap: 5px;
+}
+.thisDropDown {
+  margin-top: 0;
+}
+.colorBoxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 10px 0;
+}
+/* git add . && git commit -m '' && git push origin main */

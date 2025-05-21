@@ -24,6 +24,10 @@ export default function ChatBox() {
     setOpenSearch(openSearch ? false : true);
   };
 
+  const closeSearch = () => {
+    setOpenSearch(false);
+  };
+
   return (
     <Box
       position="relative"
@@ -84,7 +88,7 @@ export default function ChatBox() {
             </IcoButton>
           </Box>
         </Toolbar>
-        <SearchBox openSearch={openSearch} />
+        <SearchBox openSearch={openSearch} closeSearch={closeSearch} />
       </AppBar>
       {/* MID SECTION */}
       <Box>hello world!</Box>
