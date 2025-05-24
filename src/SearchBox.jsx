@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import IcoButton from "./IcoButton";
@@ -8,9 +8,24 @@ import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
 export default function SearchBox({ openSearch, closeSearch }) {
-  const [chatSearchInput, setChatSearchInput] = useState();
+  const [chatSearchInput, setChatSearchInput] = useState("");
+  const searchRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (searchRef.current && !searchRef.current.contains(event.target)) {
+      closeSearch();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <Box
+      ref={searchRef}
       sx={{
         boxShadow: "rgba(55, 54, 54, 0.2) 0px 2px 8px 0px",
         width: "656px",
