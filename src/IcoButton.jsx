@@ -1,6 +1,10 @@
 import IconButton from "@mui/material/IconButton";
+import { forwardRef } from "react";
 
-export default function IcoButton({ children, toggleSearch }) {
+const IcoButton = forwardRef(function IcoButton(
+  { children, toggleSearch },
+  ref
+) {
   return (
     <IconButton
       aria-label="Search"
@@ -11,8 +15,11 @@ export default function IcoButton({ children, toggleSearch }) {
         padding: "7px 10px 7px 10px",
       }}
       onClick={toggleSearch}
+      ref={ref}
     >
       {children}
     </IconButton>
   );
-}
+});
+
+export default IcoButton;
