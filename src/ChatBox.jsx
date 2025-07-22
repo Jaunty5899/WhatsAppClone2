@@ -15,6 +15,7 @@ import AttachFileIcon from "@mui/icons-material/AttachFile";
 import MicNoneIcon from "@mui/icons-material/MicNone";
 import SearchBox from "./SearchBox";
 import IcoButton from "./IcoButton";
+import ChatBubble from "./ChatBubble";
 
 export default function ChatBox() {
   const [openSearch, setOpenSearch] = useState(false);
@@ -95,7 +96,9 @@ export default function ChatBox() {
         />
       </AppBar>
       {/* MID SECTION */}
-      <Box>hello world!</Box>
+      <Box>
+        <ChatBubble />
+      </Box>
       {/* FOOTER */}
       <AppBar
         className="shadowUp"
