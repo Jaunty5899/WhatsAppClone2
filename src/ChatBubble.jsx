@@ -12,6 +12,7 @@ export default function ChatBubble() {
           backgroundColor: "#d8fdd2",
           color: "black",
           boxShadow: "rgba(0, 0, 0, 0.33) 1.95px 1.95px 2.6px;",
+          marginBottom: 3,
         }}
       >
         ass
@@ -26,6 +27,7 @@ export default function ChatBubble() {
           backgroundColor: "#ffffff",
           color: "black",
           boxShadow: "rgba(0, 0, 0, 0.33) 1.95px 1.95px 2.6px;",
+          marginBottom: 3,
         }}
       >
         lady D
