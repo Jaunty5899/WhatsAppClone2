@@ -34,6 +34,7 @@ import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import ColorLensOutlinedIcon from "@mui/icons-material/ColorLensOutlined";
 import CheckboxLabels from "./CheckboxLabels";
 import Shortcut from "./Shortcut";
+import { red } from "@mui/material/colors";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -953,8 +954,8 @@ export default function BasicMenu({
               sx={{
                 marginTop: 1,
                 padding: "2px 40px",
-                color: "black",
-                borderColor: "grey",
+                color: "var(--accent-color)",
+                borderColor: "var(--accent-color)",
               }}
             >
               Reset
