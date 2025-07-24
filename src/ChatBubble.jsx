@@ -13,6 +13,15 @@ export default function ChatBubble() {
           color: "black",
           boxShadow: "rgba(0, 0, 0, 0.33) 1.95px 1.95px 2.6px;",
           marginBottom: 3,
+          position: "relative",
+          "&::before": {
+            content: '"👈"', // Example: emoji or text
+            position: "absolute",
+            right: "0%",
+            top: "50%",
+            transform: "translateY(-50%)",
+            fontSize: 24,
+          },
         }}
       >
         ass
